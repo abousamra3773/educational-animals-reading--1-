@@ -58,12 +58,15 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
         </div>
       )}
 
-      {/* Detective Image */}
+      {/* Detective Image.
+          object-contain (with padding) shows the whole animal regardless of the
+          source aspect ratio, and lets the themed detective color fill the box
+          behind the art — including the rounded top corners. */}
       <div className={`relative h-40 ${mystery.detective.color} overflow-hidden`}>
         <img
           src={mystery.detective.image}
           alt={mystery.detective.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         
