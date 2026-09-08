@@ -7,8 +7,8 @@ export const characters: Character[] = [
     animal: 'Mouse',
     specialty: 'Finding rhyming words',
     personality: 'Quick and clever, Mabel loves to sniff out clues hidden in rhymes!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773788765040_b33a1ecc.jpg',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804359736_4d77484d.jpg',
+    image: '/characters/pip_mouse_detective.png',
+    fullBodyImage: '/characters/pip_mouse_detective.png',
     color: 'bg-rose-100'
   },
 
@@ -18,8 +18,8 @@ export const characters: Character[] = [
     animal: 'Bunny',
     specialty: 'Spotting word patterns',
     personality: 'Sweet and observant, Bella hops to conclusions with her sharp eyes!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773789792705_aa68440c.png',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804378574_63ffcf80.jpg',
+    image: '/characters/bella_bunny_detective.png',
+    fullBodyImage: '/characters/bella_bunny_detective.png',
     color: 'bg-purple-100'
   },
   {
@@ -28,8 +28,8 @@ export const characters: Character[] = [
     animal: 'Owl',
     specialty: 'Reading tricky words',
     personality: 'Wise and patient, Oliver helps everyone understand difficult clues!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437242816_6e3ecfe5.jpg',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804404712_c5c2d530.jpg',
+    image: '/characters/ollie_owl_detective.png',
+    fullBodyImage: '/characters/ollie_owl_detective.png',
     color: 'bg-blue-100'
   },
   {
@@ -38,8 +38,8 @@ export const characters: Character[] = [
     animal: 'Cat',
     specialty: 'Solving puzzles',
     personality: 'Playful and smart, Misty pounces on puzzles with joy!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437298337_b9d2c3f3.jpg',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804438929_5ddfac3e.jpg',
+    image: '/characters/misty_cat_detective.png',
+    fullBodyImage: '/characters/misty_cat_detective.png',
     color: 'bg-gray-100'
   },
   {
@@ -48,8 +48,8 @@ export const characters: Character[] = [
     animal: 'Bear',
     specialty: 'Remembering clues',
     personality: 'Gentle and strong, Benny never forgets an important detail!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437312882_52f67591.jpg',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804456583_a5cc0b93.jpg',
+    image: '/characters/benny_bear_detective.png',
+    fullBodyImage: '/characters/benny_bear_detective.png',
     color: 'bg-amber-100'
   },
   {
@@ -58,8 +58,8 @@ export const characters: Character[] = [
     animal: 'Fox',
     specialty: 'Word building',
     personality: 'Energetic and friendly, Finn builds words like building blocks!',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437188158_5c52274f.jpg',
-    fullBodyImage: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773804475216_67ba86fd.jpg',
+    image: '/characters/felix_fox_detective.png',
+    fullBodyImage: '/characters/felix_fox_detective.png',
     color: 'bg-orange-50'
   }
 ];

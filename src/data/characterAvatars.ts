@@ -16,7 +16,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'jake_snake': {
     id: 'jake_snake',
     name: 'Jake the Snake',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769472964638_b47941b3.jpg',
+    image: '/characters/jake_snake_baker.png',
     role: 'Baker',
     color: 'ring-green-400 bg-green-100',
     textColor: 'text-green-700'
@@ -26,7 +26,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'pancake_cat': {
     id: 'pancake_cat',
     name: 'Pancake the Cat',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769472981250_bd86040a.png',
+    image: '/characters/milo_cat_detective.png',
     role: 'Helper',
     color: 'ring-orange-400 bg-orange-100',
     textColor: 'text-orange-700'
@@ -36,7 +36,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'ted_turtle': {
     id: 'ted_turtle',
     name: 'Ted the Turtle',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769473001216_eaace213.png',
+    image: '/characters/ted_turtle.png',
     role: 'Mayor & Narrator',
     color: 'ring-teal-400 bg-teal-100',
     textColor: 'text-teal-700'
@@ -46,7 +46,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'detective': {
     id: 'detective',
     name: 'Detective',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769473019181_6f714d0d.png',
+    image: '/characters/doodle_dog_detective.png',
     role: 'Detective',
     color: 'ring-purple-400 bg-purple-100',
     textColor: 'text-purple-700'
@@ -57,7 +57,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'bella_bunny': {
     id: 'bella_bunny',
     name: 'Bella Bunny',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773789792705_aa68440c.png',
+    image: '/characters/bella_bunny_detective.png',
 
     role: 'Adventurer',
     color: 'ring-pink-400 bg-pink-100',
@@ -69,7 +69,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'batty_bat': {
     id: 'batty_bat',
     name: 'Batty the Bat',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769475383037_3c339acb.png',
+    image: '/characters/batty_bat_story.png',
     role: 'Mischief Maker',
     color: 'ring-purple-400 bg-purple-100',
     textColor: 'text-purple-700'
@@ -79,7 +79,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'matt_cat': {
     id: 'matt_cat',
     name: 'Matt the Cat',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769475395512_bd1aed12.jpg',
+    image: '/characters/milo_cat_detective.png',
     role: 'Helper',
     color: 'ring-orange-400 bg-orange-100',
     textColor: 'text-orange-700'
@@ -89,7 +89,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'oliver_owl': {
     id: 'oliver_owl',
     name: 'Oliver Owl',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437242816_6e3ecfe5.jpg',
+    image: '/characters/ollie_owl_detective.png',
     role: 'Wise Helper',
     color: 'ring-blue-400 bg-blue-100',
     textColor: 'text-blue-700'
@@ -99,7 +99,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'misty_cat': {
     id: 'misty_cat',
     name: 'Misty Cat',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437298337_b9d2c3f3.jpg',
+    image: '/characters/misty_cat_detective.png',
     role: 'Puzzle Solver',
     color: 'ring-gray-400 bg-gray-100',
     textColor: 'text-gray-700'
@@ -109,7 +109,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'benny_bear': {
     id: 'benny_bear',
     name: 'Benny Bear',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437312882_52f67591.jpg',
+    image: '/characters/benny_bear_detective.png',
     role: 'Memory Expert',
     color: 'ring-amber-400 bg-amber-100',
     textColor: 'text-amber-700'
@@ -119,7 +119,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'mabel_mouse': {
     id: 'mabel_mouse',
     name: 'Mabel Mouse',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1773788765040_b33a1ecc.jpg',
+    image: '/characters/pip_mouse_detective.png',
     role: 'Rhyme Finder',
     color: 'ring-rose-400 bg-rose-100',
     textColor: 'text-rose-700'
@@ -129,7 +129,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'finn_fox': {
     id: 'finn_fox',
     name: 'Finn Fox',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437188158_5c52274f.jpg',
+    image: '/characters/felix_fox_detective.png',
     role: 'Word Builder',
     color: 'ring-orange-300 bg-orange-50',
     textColor: 'text-orange-600'
@@ -139,7 +139,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'piggy_pig': {
     id: 'piggy_pig',
     name: 'Piggy the Pig',
-    image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769475713718_0bcc2455.png',
+    image: '/characters/peggy_pig_story.png',
     role: 'Garden Digger',
     color: 'ring-pink-400 bg-pink-100',
     textColor: 'text-pink-700'
