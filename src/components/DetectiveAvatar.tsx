@@ -185,8 +185,11 @@ export const DetectiveAvatar: React.FC<DetectiveAvatarProps> = ({
       {/* Shadow under character */}
       <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 w-[60%] h-[6%] bg-black/15 rounded-[50%] blur-sm" />
 
-      {/* Base character - full body image */}
-      <div className={`absolute inset-0 z-[10] ${idleAnimation ? 'animate-avatar-idle' : ''}`}>
+      {/* Base character - full body image.
+          Inset from the box edges (small at top for hats, larger at bottom for
+          feet + the name tag) so tall source images aren't clipped and every
+          animal is shown in full regardless of its aspect ratio. */}
+      <div className={`absolute top-[3%] bottom-[10%] left-0 right-0 z-[10] ${idleAnimation ? 'animate-avatar-idle' : ''}`}>
         <img
           src={avatarImage}
           alt={character.name}
