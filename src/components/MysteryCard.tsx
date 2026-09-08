@@ -22,15 +22,15 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
   // near-white at the top). Full class strings are written literally so Tailwind
   // includes them. Falls back to the flat color for any unmapped tint.
   const headerGradients: Record<string, string> = {
-    'bg-rose-100': 'bg-gradient-to-br from-rose-100 to-rose-200',
-    'bg-purple-100': 'bg-gradient-to-br from-purple-100 to-purple-200',
-    'bg-blue-100': 'bg-gradient-to-br from-blue-100 to-blue-200',
-    'bg-gray-100': 'bg-gradient-to-br from-gray-100 to-gray-200',
-    'bg-amber-100': 'bg-gradient-to-br from-amber-100 to-amber-200',
-    'bg-orange-50': 'bg-gradient-to-br from-orange-50 to-orange-100',
-    'bg-orange-100': 'bg-gradient-to-br from-orange-100 to-orange-200',
-    'bg-green-100': 'bg-gradient-to-br from-green-100 to-green-200',
-    'bg-sky-100': 'bg-gradient-to-br from-sky-100 to-sky-200'
+    'bg-rose-100': 'bg-gradient-to-br from-rose-200 to-rose-300',
+    'bg-purple-100': 'bg-gradient-to-br from-purple-200 to-purple-300',
+    'bg-blue-100': 'bg-gradient-to-br from-blue-200 to-blue-300',
+    'bg-gray-100': 'bg-gradient-to-br from-gray-200 to-gray-300',
+    'bg-amber-100': 'bg-gradient-to-br from-amber-200 to-amber-300',
+    'bg-orange-50': 'bg-gradient-to-br from-orange-200 to-orange-300',
+    'bg-orange-100': 'bg-gradient-to-br from-orange-200 to-orange-300',
+    'bg-green-100': 'bg-gradient-to-br from-green-200 to-green-300',
+    'bg-sky-100': 'bg-gradient-to-br from-sky-200 to-sky-300'
   };
   const headerBg = headerGradients[mystery.detective.color] ?? mystery.detective.color;
 
