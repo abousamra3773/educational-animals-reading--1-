@@ -64,14 +64,16 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         </div>
       )}
 
-      {/* Character Image */}
+      {/* Character Image.
+          Use object-contain with padding so the whole animal is always shown,
+          regardless of the source image's aspect ratio (portrait or landscape). */}
       <div className={`relative h-56 ${character.color} overflow-hidden`}>
         <img
           src={character.image}
           alt={character.name}
           className={`
-            w-full h-full object-cover transition-transform duration-700
-            ${isHovered ? 'scale-110' : 'scale-100'}
+            w-full h-full object-contain p-2 transition-transform duration-700
+            ${isHovered ? 'scale-105' : 'scale-100'}
           `}
         />
         
