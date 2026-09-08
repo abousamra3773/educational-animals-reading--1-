@@ -119,9 +119,9 @@ export const mysteries: Mystery[] = [
       {
         id: 1,
         title: 'Scene 1',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769470971387_8646c807.jpg',
+        image: '/stories/ake/scene1-bakery.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'Oh No! I need to bake a cake for the town party.', emotion: 'worried' },
+          { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake for the town party.', emotion: 'worried' },
           { speaker: 'narrator', text: 'But Jake cannot find his special recipe.' },
           { speaker: 'detective', text: 'I will help you!', emotion: 'excited' }
         ]
@@ -129,7 +129,7 @@ export const mysteries: Mystery[] = [
       {
         id: 2,
         title: 'Scene 2',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769470991605_9008cbdf.png',
+        image: '/stories/ake/scene2-lake-memory.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'I put it by the lake this morning. Did I take it back?', emotion: 'thinking' },
           { speaker: 'narrator', text: 'Jake tries to remember where he left the recipe.' },
@@ -182,7 +182,8 @@ export const mysteries: Mystery[] = [
         ]
       }
     ],
-    locationId: 'bakery'
+    locationId: 'bakery',
+    narratorId: 'mabel_mouse'
   },
 
   {

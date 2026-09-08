@@ -47,6 +47,7 @@ export interface Mystery {
   story: StoryPage[];
   scenes?: StoryScene[]; // New scene-based format
   locationId?: string;
+  narratorId?: string; // Optional per-story narrator override (key into characterAvatars). Defaults to Ted the Turtle.
 }
 
 export interface StoryPage {
