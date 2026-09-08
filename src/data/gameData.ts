@@ -61,6 +61,36 @@ export const characters: Character[] = [
     image: '/characters/felix_fox_detective.png',
     fullBodyImage: '/characters/felix_fox_detective.png',
     color: 'bg-orange-50'
+  },
+  {
+    id: 'sam',
+    name: 'Sam the Squirrel',
+    animal: 'Squirrel',
+    specialty: 'Finding hidden letters',
+    personality: 'Quick and busy, Sam loves to stash letters and find them again!',
+    image: '/characters/sam_squirrel_detective.png',
+    fullBodyImage: '/characters/sam_squirrel_detective.png',
+    color: 'bg-green-100'
+  },
+  {
+    id: 'pancake',
+    name: 'Pancake the Cat',
+    animal: 'Cat',
+    specialty: 'Sounding out words',
+    personality: 'Cozy and curious, Pancake pounces on sounds to build words!',
+    image: '/characters/pancake_cat_detective.png',
+    fullBodyImage: '/characters/pancake_cat_detective.png',
+    color: 'bg-orange-100'
+  },
+  {
+    id: 'leo',
+    name: 'Leo the Labradoodle',
+    animal: 'Dog',
+    specialty: 'Tracking word clues',
+    personality: 'Loyal and playful, Leo sniffs out clues with a wag and a woof!',
+    image: '/characters/leo_labradoodle_detective.png',
+    fullBodyImage: '/characters/leo_labradoodle_detective.png',
+    color: 'bg-sky-100'
   }
 ];
 
