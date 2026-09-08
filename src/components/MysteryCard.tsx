@@ -17,6 +17,23 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
     hard: 'bg-rose-100 text-rose-700 border-rose-200'
   };
 
+  // Map each detective's flat tint to a soft light gradient so the themed color
+  // reads clearly into the rounded top corners (pale -100 tints otherwise look
+  // near-white at the top). Full class strings are written literally so Tailwind
+  // includes them. Falls back to the flat color for any unmapped tint.
+  const headerGradients: Record<string, string> = {
+    'bg-rose-100': 'bg-gradient-to-br from-rose-200 to-rose-300',
+    'bg-purple-100': 'bg-gradient-to-br from-purple-200 to-purple-300',
+    'bg-blue-100': 'bg-gradient-to-br from-blue-200 to-blue-300',
+    'bg-gray-100': 'bg-gradient-to-br from-gray-200 to-gray-300',
+    'bg-amber-100': 'bg-gradient-to-br from-amber-200 to-amber-300',
+    'bg-orange-50': 'bg-gradient-to-br from-orange-200 to-orange-300',
+    'bg-orange-100': 'bg-gradient-to-br from-orange-200 to-orange-300',
+    'bg-green-100': 'bg-gradient-to-br from-green-200 to-green-300',
+    'bg-sky-100': 'bg-gradient-to-br from-sky-200 to-sky-300'
+  };
+  const headerBg = headerGradients[mystery.detective.color] ?? mystery.detective.color;
+
   const difficultyLabels = {
     easy: t('mystery.easy'),
     medium: t('mystery.medium'),
@@ -58,12 +75,15 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
         </div>
       )}
 
-      {/* Detective Image */}
-      <div className={`relative h-40 ${mystery.detective.color} overflow-hidden`}>
+      {/* Detective Image.
+          object-contain (with padding) shows the whole animal regardless of the
+          source aspect ratio, and lets the themed detective color fill the box
+          behind the art — including the rounded top corners. */}
+      <div className={`relative h-40 ${headerBg} overflow-hidden`}>
         <img
           src={mystery.detective.image}
           alt={mystery.detective.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         
