@@ -17,6 +17,23 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
     hard: 'bg-rose-100 text-rose-700 border-rose-200'
   };
 
+  // Map each detective's flat tint to a soft light gradient so the themed color
+  // reads clearly into the rounded top corners (pale -100 tints otherwise look
+  // near-white at the top). Full class strings are written literally so Tailwind
+  // includes them. Falls back to the flat color for any unmapped tint.
+  const headerGradients: Record<string, string> = {
+    'bg-rose-100': 'bg-gradient-to-br from-rose-100 to-rose-200',
+    'bg-purple-100': 'bg-gradient-to-br from-purple-100 to-purple-200',
+    'bg-blue-100': 'bg-gradient-to-br from-blue-100 to-blue-200',
+    'bg-gray-100': 'bg-gradient-to-br from-gray-100 to-gray-200',
+    'bg-amber-100': 'bg-gradient-to-br from-amber-100 to-amber-200',
+    'bg-orange-50': 'bg-gradient-to-br from-orange-50 to-orange-100',
+    'bg-orange-100': 'bg-gradient-to-br from-orange-100 to-orange-200',
+    'bg-green-100': 'bg-gradient-to-br from-green-100 to-green-200',
+    'bg-sky-100': 'bg-gradient-to-br from-sky-100 to-sky-200'
+  };
+  const headerBg = headerGradients[mystery.detective.color] ?? mystery.detective.color;
+
   const difficultyLabels = {
     easy: t('mystery.easy'),
     medium: t('mystery.medium'),
@@ -62,7 +79,7 @@ export const MysteryCard: React.FC<MysteryCardProps> = ({ mystery, onClick }) =>
           object-contain (with padding) shows the whole animal regardless of the
           source aspect ratio, and lets the themed detective color fill the box
           behind the art — including the rounded top corners. */}
-      <div className={`relative h-40 ${mystery.detective.color} overflow-hidden`}>
+      <div className={`relative h-40 ${headerBg} overflow-hidden`}>
         <img
           src={mystery.detective.image}
           alt={mystery.detective.name}
