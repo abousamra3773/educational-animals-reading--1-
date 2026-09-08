@@ -165,7 +165,7 @@ export const mysteries: Mystery[] = [
       {
         id: 5,
         title: 'Scene 5',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471048731_ec52592c.png',
+        image: '/stories/ake/scene5-recipe-found.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
           { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake for the town party.' },
@@ -175,7 +175,7 @@ export const mysteries: Mystery[] = [
       {
         id: 6,
         title: 'Scene 6',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471068503_d6f09d32.png',
+        image: '/stories/ake/scene6-well-done.jpg',
         dialogue: [
           { speaker: 'Pancake the Cat', text: 'Great job, Detective!', emotion: 'happy' },
           { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words.' }
