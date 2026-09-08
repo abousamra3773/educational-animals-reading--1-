@@ -139,7 +139,7 @@ export const mysteries: Mystery[] = [
       {
         id: 3,
         title: 'Scene 3',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471010236_efd6509a.png',
+        image: '/stories/ake/scene3-pancake-clue.jpg',
         dialogue: [
           { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter and it slipped away.', emotion: 'surprised' },
           { speaker: 'narrator', text: 'Pancake points toward the door with her paw.' },
@@ -149,7 +149,7 @@ export const mysteries: Mystery[] = [
       {
         id: 4,
         title: 'Scene 4',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471029433_fdffdd81.png',
+        image: '/stories/ake/scene4-find-recipe.jpg',
         headerText: 'Can you find the missing recipe? Click on the recipe to help Jake the Snake.',
         dialogue: [
           { speaker: 'detective', text: 'There it is! The recipe slipped under the mat by mistake.', emotion: 'happy' },
@@ -159,7 +159,7 @@ export const mysteries: Mystery[] = [
         interactiveTarget: {
           description: 'Recipe paper under the doormat',
           hint: 'Look near the door!',
-          position: { x: 45, y: 75, width: 15, height: 12 }
+          position: { x: 30, y: 78, width: 28, height: 20 }
         }
       },
       {
