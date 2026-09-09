@@ -121,9 +121,8 @@ export const mysteries: Mystery[] = [
         title: 'Scene 1',
         image: '/stories/ake/scene1-bakery.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake for the town party.', emotion: 'worried' },
-          { speaker: 'narrator', text: 'But Jake cannot find his special recipe.' },
-          { speaker: 'detective', text: 'I will help you!', emotion: 'excited' }
+          { speaker: 'narrator', text: "Flutter! It's me, Willa the Wandering Warbler! I just flew into Jake's Bakery in Tangle Tail Town and something is wrong!" },
+          { speaker: 'Jake the Snake', text: 'Oh no! My recipe is blank! It just says RECIPE and nothing else!', emotion: 'worried' }
         ]
       },
       {
@@ -169,7 +168,7 @@ export const mysteries: Mystery[] = [
         dialogue: [
           { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
           { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake for the town party.' },
-          { speaker: 'detective', text: 'Hooray!', emotion: 'excited' }
+          { speaker: 'Pancake the Cat', text: 'Hooray!', emotion: 'happy' }
         ]
       },
       {
@@ -178,7 +177,7 @@ export const mysteries: Mystery[] = [
         image: '/stories/ake/scene6-well-done.jpg',
         dialogue: [
           { speaker: 'Pancake the Cat', text: 'Great job, Detective!', emotion: 'happy' },
-          { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words.' }
+          { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words: cake, bake, lake, make, take, wake, Jake, rake, shake, flake.' }
         ]
       }
     ],
