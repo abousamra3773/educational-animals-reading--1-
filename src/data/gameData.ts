@@ -101,7 +101,7 @@ export const mysteries: Mystery[] = [
     title: 'The Case of the Missing Cake Recipe',
     tagline: 'Help Jake the Snake find his missing cake recipe!',
     description: 'Jake the Snake needs to bake a cake for the town party, but his special recipe is missing! Help solve the mystery.',
-    detective: characters[0],
+    detective: characters[7],
     wordFamily: '-ake',
     difficulty: 'easy',
     stars: 0,
