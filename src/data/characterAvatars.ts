@@ -157,8 +157,11 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
 };
 
 // Helper function to get character avatar by speaker name
-export function getCharacterAvatar(speaker: string): CharacterAvatar | null {
-  if (speaker === 'narrator') return characterAvatars['ted_turtle'];
+export function getCharacterAvatar(speaker: string, narratorId?: string): CharacterAvatar | null {
+  if (speaker === 'narrator') {
+    if (narratorId && characterAvatars[narratorId]) return characterAvatars[narratorId];
+    return characterAvatars['ted_turtle'];
+  }
   if (speaker === 'detective') return characterAvatars['detective'];
   
   const speakerLower = speaker.toLowerCase();
@@ -196,8 +199,9 @@ export function getCharacterAvatar(speaker: string): CharacterAvatar | null {
 }
 
 // Get display name for a speaker (with avatar name substitution)
-export function getSpeakerDisplayName(speaker: string, avatarName?: string): string {
+export function getSpeakerDisplayName(speaker: string, avatarName?: string, narratorId?: string): string {
   if (speaker === 'narrator') {
+    if (narratorId && characterAvatars[narratorId]) return characterAvatars[narratorId].name;
     return 'Ted the Turtle';
   }
   if (speaker === 'detective') {

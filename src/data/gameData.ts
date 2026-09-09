@@ -119,9 +119,9 @@ export const mysteries: Mystery[] = [
       {
         id: 1,
         title: 'Scene 1',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769470971387_8646c807.jpg',
+        image: '/stories/ake/scene1-bakery.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'Oh No! I need to bake a cake for the town party.', emotion: 'worried' },
+          { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake for the town party.', emotion: 'worried' },
           { speaker: 'narrator', text: 'But Jake cannot find his special recipe.' },
           { speaker: 'detective', text: 'I will help you!', emotion: 'excited' }
         ]
@@ -129,7 +129,7 @@ export const mysteries: Mystery[] = [
       {
         id: 2,
         title: 'Scene 2',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769470991605_9008cbdf.png',
+        image: '/stories/ake/scene2-lake-memory.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'I put it by the lake this morning. Did I take it back?', emotion: 'thinking' },
           { speaker: 'narrator', text: 'Jake tries to remember where he left the recipe.' },
@@ -139,7 +139,7 @@ export const mysteries: Mystery[] = [
       {
         id: 3,
         title: 'Scene 3',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471010236_efd6509a.png',
+        image: '/stories/ake/scene3-pancake-clue.jpg',
         dialogue: [
           { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter and it slipped away.', emotion: 'surprised' },
           { speaker: 'narrator', text: 'Pancake points toward the door with her paw.' },
@@ -149,7 +149,7 @@ export const mysteries: Mystery[] = [
       {
         id: 4,
         title: 'Scene 4',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471029433_fdffdd81.png',
+        image: '/stories/ake/scene4-find-recipe.jpg',
         headerText: 'Can you find the missing recipe? Click on the recipe to help Jake the Snake.',
         dialogue: [
           { speaker: 'detective', text: 'There it is! The recipe slipped under the mat by mistake.', emotion: 'happy' },
@@ -159,13 +159,13 @@ export const mysteries: Mystery[] = [
         interactiveTarget: {
           description: 'Recipe paper under the doormat',
           hint: 'Look near the door!',
-          position: { x: 45, y: 75, width: 15, height: 12 }
+          position: { x: 30, y: 78, width: 28, height: 20 }
         }
       },
       {
         id: 5,
         title: 'Scene 5',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471048731_ec52592c.png',
+        image: '/stories/ake/scene5-recipe-found.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
           { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake for the town party.' },
@@ -175,14 +175,15 @@ export const mysteries: Mystery[] = [
       {
         id: 6,
         title: 'Scene 6',
-        image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769471068503_d6f09d32.png',
+        image: '/stories/ake/scene6-well-done.jpg',
         dialogue: [
           { speaker: 'Pancake the Cat', text: 'Great job, Detective!', emotion: 'happy' },
           { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words.' }
         ]
       }
     ],
-    locationId: 'bakery'
+    locationId: 'bakery',
+    narratorId: 'mabel_mouse'
   },
 
   {

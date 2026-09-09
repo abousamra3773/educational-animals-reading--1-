@@ -4,6 +4,7 @@ import { useGame } from '../context/GameContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { getCharacterAvatar, getSpeakerDisplayName } from '../data/characterAvatars';
+import { characters } from '../data/gameData';
 import { 
   ChevronRightIcon, 
   HomeIcon, 
@@ -26,6 +27,8 @@ function getSpeakerVoiceId(speaker: string): string {
 interface DialogueLineComponentProps {
   line: DialogueLine;
   avatarName: string;
+  narratorId?: string;
+  detectiveImage?: string;
   textSizeClass: string;
   highContrast: boolean;
   audioSpeed: number;
@@ -34,6 +37,8 @@ interface DialogueLineComponentProps {
 const DialogueLineComponent: React.FC<DialogueLineComponentProps> = ({
   line,
   avatarName,
+  narratorId,
+  detectiveImage,
   textSizeClass,
   highContrast,
   audioSpeed
@@ -43,8 +48,14 @@ const DialogueLineComponent: React.FC<DialogueLineComponentProps> = ({
   const isPlayingRef = useRef(false);
   const { t } = useLanguage();
   
-  const characterAvatar = getCharacterAvatar(line.speaker);
-  const displayName = getSpeakerDisplayName(line.speaker, avatarName);
+  const baseAvatar = getCharacterAvatar(line.speaker, narratorId);
+  // For the player's "detective" lines, swap in the detective chosen in
+  // Meet the Detectives (any of the 9) instead of the fixed placeholder art.
+  const characterAvatar =
+    line.speaker === 'detective' && detectiveImage && baseAvatar
+      ? { ...baseAvatar, image: detectiveImage }
+      : baseAvatar;
+  const displayName = getSpeakerDisplayName(line.speaker, avatarName, narratorId);
   const words = line.text.split(' ');
 
   useEffect(() => {
@@ -228,6 +239,8 @@ export const StorySceneInterface: React.FC<StorySceneInterfaceProps> = ({
   const currentScene = scenes[currentSceneIndex];
   const isLastScene = currentSceneIndex === scenes.length - 1;
   const avatarName = playerState.avatar?.name || 'Detective';
+  const chosenDetective = characters.find(c => c.id === playerState.chosenDetectiveId);
+  const detectiveImage = chosenDetective?.image;
 
   const textSizeClasses = {
     small: 'text-base',
@@ -360,7 +373,7 @@ export const StorySceneInterface: React.FC<StorySceneInterfaceProps> = ({
           onMouseMove={handleImageMouseMove}
           onMouseLeave={handleImageMouseLeave}
         >
-          <img src={currentScene.image} alt={`Scene ${currentSceneIndex + 1}`} className={`w-full ${currentScene.isInteractive ? 'object-contain bg-gray-900/5' : 'object-cover'}`} style={{ maxHeight: '450px' }} />
+          <img src={currentScene.image} alt={`Scene ${currentSceneIndex + 1}`} className="w-full object-contain bg-gray-900/5" style={{ maxHeight: '450px' }} />
           {currentScene.isInteractive && !foundClue && showMagnifier && (
             <div className="absolute pointer-events-none transition-opacity" style={{ left: magnifierPosition.x - 30, top: magnifierPosition.y - 30, width: 60, height: 60 }}>
               <div className="w-full h-full rounded-full border-4 border-amber-400 bg-amber-100/30 flex items-center justify-center">
@@ -396,7 +409,7 @@ export const StorySceneInterface: React.FC<StorySceneInterfaceProps> = ({
           <div className="space-y-4">
             {currentScene.dialogue.map((line, index) => (
               <div key={index} style={{ animationDelay: `${index * 0.2}s`, animation: showDialogue ? 'fadeInUp 0.5s ease-out forwards' : 'none' }}>
-                <DialogueLineComponent line={line} avatarName={avatarName} textSizeClass={textSizeClasses[accessibility.textSize]} highContrast={accessibility.highContrast} audioSpeed={accessibility.audioSpeed} />
+                <DialogueLineComponent line={line} avatarName={avatarName} narratorId={mystery.narratorId} detectiveImage={detectiveImage} textSizeClass={textSizeClasses[accessibility.textSize]} highContrast={accessibility.highContrast} audioSpeed={accessibility.audioSpeed} />
               </div>
             ))}
           </div>
