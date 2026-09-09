@@ -195,6 +195,25 @@ html {
   animation: slide-up 0.5s ease-out;
 }
 
+/* Willa the Warbler "flies in from her travels" intro */
+@keyframes willa-flit {
+  0% {
+    opacity: 0;
+    transform: translateX(-48px) translateY(-14px) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+.animate-willa-flit {
+  animation: willa-flit 1.3s ease-out both;
+}
+
 
 
 /* Focus styles for accessibility */

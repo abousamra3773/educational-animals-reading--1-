@@ -101,7 +101,7 @@ export const mysteries: Mystery[] = [
     title: 'The Case of the Missing Cake Recipe',
     tagline: 'Help Jake the Snake find his missing cake recipe!',
     description: 'Jake the Snake needs to bake a cake for the town party, but his special recipe is missing! Help solve the mystery.',
-    detective: characters[0],
+    detective: characters[7],
     wordFamily: '-ake',
     difficulty: 'easy',
     stars: 0,
@@ -121,8 +121,8 @@ export const mysteries: Mystery[] = [
         title: 'Scene 1',
         image: '/stories/ake/scene1-bakery.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake for the town party.', emotion: 'worried' },
-          { speaker: 'narrator', text: 'But Jake cannot find his special recipe.' },
+          { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake.', emotion: 'worried' },
+          { speaker: 'narrator', text: 'Jake cannot find his recipe.' },
           { speaker: 'detective', text: 'I will help you!', emotion: 'excited' }
         ]
       },
@@ -132,7 +132,7 @@ export const mysteries: Mystery[] = [
         image: '/stories/ake/scene2-lake-memory.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'I put it by the lake this morning. Did I take it back?', emotion: 'thinking' },
-          { speaker: 'narrator', text: 'Jake tries to remember where he left the recipe.' },
+          { speaker: 'narrator', text: 'Jake tries to remember. Where did he leave it?' },
           { speaker: 'detective', text: "Let's ask Pancake!", emotion: 'excited' }
         ]
       },
@@ -141,8 +141,8 @@ export const mysteries: Mystery[] = [
         title: 'Scene 3',
         image: '/stories/ake/scene3-pancake-clue.jpg',
         dialogue: [
-          { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter and it slipped away.', emotion: 'surprised' },
-          { speaker: 'narrator', text: 'Pancake points toward the door with her paw.' },
+          { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter. It slipped away!', emotion: 'surprised' },
+          { speaker: 'narrator', text: 'Pancake points to the door with her paw.' },
           { speaker: 'detective', text: 'Follow the clue!', emotion: 'excited' }
         ]
       },
@@ -168,7 +168,7 @@ export const mysteries: Mystery[] = [
         image: '/stories/ake/scene5-recipe-found.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
-          { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake for the town party.' },
+          { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake.' },
           { speaker: 'detective', text: 'Hooray!', emotion: 'excited' }
         ]
       },
@@ -182,8 +182,7 @@ export const mysteries: Mystery[] = [
         ]
       }
     ],
-    locationId: 'bakery',
-    narratorId: 'mabel_mouse'
+    locationId: 'bakery'
   },
 
   {
