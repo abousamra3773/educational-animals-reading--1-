@@ -17,23 +17,24 @@ const scenes = [
   {
     title: 'Scene 1 — Jake\u2019s Bakery',
     lines: [
-      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Flutter! It\u2019s me, Willa the Wandering Warbler! I just flew into Jake\u2019s Bakery in Tangle Tail Town and something is wrong!' },
-      { who: 'Jake the Snake', text: 'Oh no! My recipe is blank! It just says RECIPE and nothing else!' },
+      { who: 'Jake the Snake', text: 'Oh no! I need to bake a cake.' },
+      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Jake cannot find his recipe.' },
+      { who: 'Detective (You!)', text: 'I will help you!' },
     ],
   },
   {
     title: 'Scene 2 — Remembering the Lake',
     lines: [
       { who: 'Jake the Snake', text: 'I put it by the lake this morning. Did I take it back?' },
-      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Jake tries to remember where he left the recipe.' },
+      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Jake tries to remember. Where did he leave it?' },
       { who: 'Detective (You!)', text: 'Let\u2019s ask Pancake!' },
     ],
   },
   {
     title: 'Scene 3 — Pancake\u2019s Clue',
     lines: [
-      { who: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter and it slipped away.' },
-      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Pancake points toward the door with her paw.' },
+      { who: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter. It slipped away!' },
+      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Pancake points to the door with her paw.' },
       { who: 'Detective (You!)', text: 'Follow the clue!' },
     ],
   },
@@ -49,15 +50,15 @@ const scenes = [
     title: 'Scene 5 — Recipe Found!',
     lines: [
       { who: 'Jake the Snake', text: 'You found it! Now I can bake my cake!' },
-      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Jake is so happy! He will make the best cake for the town party.' },
-      { who: 'Pancake the Cat', text: 'Hooray!' },
+      { who: 'Willa the Wandering Warbler (Narrator)', text: 'Jake is so happy! He will make the best cake.' },
+      { who: 'Detective (You!)', text: 'Hooray!' },
     ],
   },
   {
     title: 'Scene 6 — Well Done, Detective!',
     lines: [
       { who: 'Pancake the Cat', text: 'Great job, Detective!' },
-      { who: 'Willa the Wandering Warbler (Narrator)', text: 'You helped Jake find his recipe! Time to practice your -AKE words: cake, bake, lake, make, take, wake, Jake, rake, shake, flake.' },
+      { who: 'Willa the Wandering Warbler (Narrator)', text: 'You helped Jake find his recipe! Time to practice your -AKE words.' },
     ],
   },
 ];
