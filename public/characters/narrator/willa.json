@@ -1,0 +1,9 @@
+{
+  "id": "willa_warbler",
+  "name": "Willa the Wandering Warbler",
+  "role": "narrator",
+  "species": "warbler",
+  "description": "Willa travels the world collecting words in her WORDS satchel and flies into Tangle Tail Town to tell each story.",
+  "artStyle": "watercolor storybook, thick brown outline, big sparkle eyes, rosy cheeks, matches jake_snake_baker_final.png and milo_red_tabby_detective.png",
+  "traits": ["curious", "traveler", "word collector"]
+}

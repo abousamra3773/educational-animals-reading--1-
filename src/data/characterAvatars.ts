@@ -32,12 +32,22 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
     textColor: 'text-orange-700'
   },
   
-  // Ted the Turtle - Narrator / Mayor of Tangle Town
+  // Willa the Wandering Warbler - permanent narrator of Word and Whiskers
+  'willa_warbler': {
+    id: 'willa_warbler',
+    name: 'Willa the Wandering Warbler',
+    image: '/characters/narrator/willa_the_wandering_warbler.png',
+    role: 'Narrator',
+    color: 'ring-lime-400 bg-lime-100',
+    textColor: 'text-lime-700'
+  },
+
+  // Ted the Turtle - Mayor of Tangle Town (former narrator)
   'ted_turtle': {
     id: 'ted_turtle',
     name: 'Ted the Turtle',
     image: '/characters/ted_turtle.png',
-    role: 'Mayor & Narrator',
+    role: 'Mayor',
     color: 'ring-teal-400 bg-teal-100',
     textColor: 'text-teal-700'
   },
@@ -160,7 +170,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
 export function getCharacterAvatar(speaker: string, narratorId?: string): CharacterAvatar | null {
   if (speaker === 'narrator') {
     if (narratorId && characterAvatars[narratorId]) return characterAvatars[narratorId];
-    return characterAvatars['ted_turtle'];
+    return characterAvatars['willa_warbler'];
   }
   if (speaker === 'detective') return characterAvatars['detective'];
   
@@ -202,7 +212,7 @@ export function getCharacterAvatar(speaker: string, narratorId?: string): Charac
 export function getSpeakerDisplayName(speaker: string, avatarName?: string, narratorId?: string): string {
   if (speaker === 'narrator') {
     if (narratorId && characterAvatars[narratorId]) return characterAvatars[narratorId].name;
-    return 'Ted the Turtle';
+    return 'Willa the Wandering Warbler';
   }
   if (speaker === 'detective') {
     return `Detective ${avatarName || 'You'}`;

@@ -182,8 +182,7 @@ export const mysteries: Mystery[] = [
         ]
       }
     ],
-    locationId: 'bakery',
-    narratorId: 'mabel_mouse'
+    locationId: 'bakery'
   },
 
   {

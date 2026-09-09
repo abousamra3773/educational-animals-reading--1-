@@ -374,6 +374,18 @@ export const StorySceneInterface: React.FC<StorySceneInterfaceProps> = ({
           onMouseLeave={handleImageMouseLeave}
         >
           <img src={currentScene.image} alt={`Scene ${currentSceneIndex + 1}`} className="w-full object-contain bg-gray-900/5" style={{ maxHeight: '450px' }} />
+          {currentSceneIndex === 0 && !currentScene.isInteractive && (
+            <div className="absolute top-3 left-3 flex items-end gap-2 pointer-events-none animate-willa-flit">
+              <img
+                src="/characters/narrator/willa_flying.png"
+                alt="Willa the Wandering Warbler flies in"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-lg"
+              />
+              <span className="mb-2 bg-white/90 backdrop-blur-sm text-lime-700 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full shadow">
+                Willa flies in from her travels...
+              </span>
+            </div>
+          )}
           {currentScene.isInteractive && !foundClue && showMagnifier && (
             <div className="absolute pointer-events-none transition-opacity" style={{ left: magnifierPosition.x - 30, top: magnifierPosition.y - 30, width: 60, height: 60 }}>
               <div className="w-full h-full rounded-full border-4 border-amber-400 bg-amber-100/30 flex items-center justify-center">
