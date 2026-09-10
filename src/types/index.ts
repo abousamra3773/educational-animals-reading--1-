@@ -48,6 +48,19 @@ export interface Mystery {
   scenes?: StoryScene[]; // New scene-based format
   locationId?: string;
   narratorId?: string; // Optional per-story narrator override (key into characterAvatars). Defaults to Willa the Wandering Warbler.
+  order?: number; // Position in the full word-family learning sequence
+  status?: 'available' | 'coming-soon'; // Defaults to 'available' when omitted
+}
+
+// A placeholder entry for a word family that does not have a story yet.
+// Rendered in the lesson list alongside real mysteries but not playable.
+export interface ComingSoonLesson {
+  id: string;
+  wordFamily: string;
+  title: string;
+  order: number; // Position in the full word-family learning sequence
+  status: 'coming-soon';
+  group: string; // Sequence group label, e.g. "Short Vowel CVC"
 }
 
 export interface StoryPage {

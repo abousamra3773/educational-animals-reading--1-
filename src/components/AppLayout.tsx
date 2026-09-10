@@ -6,6 +6,7 @@ import { useTranslatedMysteries } from '../hooks/useTranslatedMystery';
 import { Navigation } from './Navigation';
 import { HeroSection } from './HeroSection';
 import { MysteryCard } from './MysteryCard';
+import { ComingSoonCard } from './ComingSoonCard';
 import { CharacterCard } from './CharacterCard';
 import { ProgressDashboard } from './ProgressDashboard';
 import { ReadingInterface } from './ReadingInterface';
@@ -20,8 +21,8 @@ import { MyDetective } from './MyDetective';
 import { TreehouseHQ } from './TreehouseHQ';
 import { StreakModal } from './StreakModal';
 import { StreakCalendar } from './StreakCalendar';
-import { characters } from '../data/gameData';
-import { Mystery } from '../types';
+import { characters, comingSoonLessons } from '../data/gameData';
+import { Mystery, ComingSoonLesson } from '../types';
 
 import { 
   MagnifyingGlassIcon, 
@@ -61,9 +62,34 @@ const AppContent: React.FC = () => {
   const [difficultyFilter, setDifficultyFilter] = useState<'all' | 'easy' | 'medium' | 'hard'>('all');
   const mysteriesRef = useRef<HTMLDivElement>(null);
 
-  const filteredMysteries = difficultyFilter === 'all' 
-    ? mysteries 
-    : mysteries.filter(m => m.difficulty === difficultyFilter);
+  // Merge real mysteries with "coming soon" placeholders into a single list
+  // ordered by their position in the full word-family learning sequence.
+  type LessonItem =
+    | { kind: 'mystery'; order: number; mystery: Mystery }
+    | { kind: 'coming-soon'; order: number; lesson: ComingSoonLesson };
+
+  const lessonItems = useMemo<LessonItem[]>(() => {
+    const mysteryItems: LessonItem[] = mysteries.map((m) => ({
+      kind: 'mystery',
+      order: m.order ?? Number.MAX_SAFE_INTEGER,
+      mystery: m,
+    }));
+    const comingItems: LessonItem[] = comingSoonLessons.map((l) => ({
+      kind: 'coming-soon',
+      order: l.order,
+      lesson: l,
+    }));
+    return [...mysteryItems, ...comingItems].sort((a, b) => a.order - b.order);
+  }, [mysteries]);
+
+  // The difficulty filter only applies to real, playable mysteries. When a
+  // specific difficulty is selected we hide the placeholders.
+  const visibleLessonItems =
+    difficultyFilter === 'all'
+      ? lessonItems
+      : lessonItems.filter(
+          (item) => item.kind === 'mystery' && item.mystery.difficulty === difficultyFilter
+        );
 
 
   // Load progress from cloud when authenticated
@@ -401,16 +427,20 @@ const AppContent: React.FC = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredMysteries.map((mystery) => (
-                <MysteryCard
-                  key={mystery.id}
-                  mystery={mystery}
-                  onClick={() => setSelectedMystery(mystery)}
-                />
-              ))}
+              {visibleLessonItems.map((item) =>
+                item.kind === 'mystery' ? (
+                  <MysteryCard
+                    key={item.mystery.id}
+                    mystery={item.mystery}
+                    onClick={() => setSelectedMystery(item.mystery)}
+                  />
+                ) : (
+                  <ComingSoonCard key={item.lesson.id} lesson={item.lesson} />
+                )
+              )}
             </div>
 
-            {filteredMysteries.length === 0 && (
+            {visibleLessonItems.length === 0 && (
               <div className="text-center py-12">
                 <SparklesIcon className="mx-auto text-gray-300 mb-4" size={48} />
                 <p className="text-gray-500">No mysteries found with this filter.</p>
