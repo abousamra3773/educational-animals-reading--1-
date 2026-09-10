@@ -1,4 +1,4 @@
-import { Character, Mystery, Badge } from '../types';
+import { Character, Mystery, Badge, ComingSoonLesson } from '../types';
 
 export const characters: Character[] = [
   {
@@ -103,6 +103,7 @@ export const mysteries: Mystery[] = [
     description: 'Jake the Snake needs to bake a cake for the town party, but his special recipe is missing! Help solve the mystery.',
     detective: characters[7],
     wordFamily: '-ake',
+    order: 16,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -192,6 +193,7 @@ export const mysteries: Mystery[] = [
     description: 'Bella\'s favorite hat flew away! Find words that end in "-at" to help.',
     detective: characters[1],
     wordFamily: '-at',
+    order: 1,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -283,6 +285,7 @@ export const mysteries: Mystery[] = [
     description: 'Who dug holes in the garden? Find words that end in "-ig" to discover the truth.',
     detective: characters[2],
     wordFamily: '-ig',
+    order: 4,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -372,6 +375,7 @@ export const mysteries: Mystery[] = [
     description: 'Everyone is yawning! Find words that end in "-eep" to wake them up.',
     detective: characters[3],
     wordFamily: '-eep',
+    order: 46,
     difficulty: 'medium',
     stars: 0,
     completed: false,
@@ -462,6 +466,7 @@ export const mysteries: Mystery[] = [
     description: 'Something splashed in the rain! Find words that end in "-ain" to investigate.',
     detective: characters[4],
     wordFamily: '-ain',
+    order: 47,
     difficulty: 'medium',
     stars: 0,
     completed: false,
@@ -480,6 +485,7 @@ export const mysteries: Mystery[] = [
     description: 'Who left footprints in the park? Find words that end in "-un" to find out.',
     detective: characters[5],
     wordFamily: '-un',
+    order: 11,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -572,6 +578,7 @@ export const mysteries: Mystery[] = [
     description: 'The bell stopped ringing! Find words that end in "-ell" to fix it.',
     detective: characters[0],
     wordFamily: '-ell',
+    order: 48,
     difficulty: 'medium',
     stars: 0,
     completed: false,
@@ -590,6 +597,7 @@ export const mysteries: Mystery[] = [
     description: 'Things are hopping at the shop! Find words that end in "-op" to help.',
     detective: characters[1],
     wordFamily: '-op',
+    order: 7,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -607,6 +615,7 @@ export const mysteries: Mystery[] = [
     description: 'The lights went out! Find words that end in "-ight" to bring them back.',
     detective: characters[2],
     wordFamily: '-ight',
+    order: 34,
     difficulty: 'hard',
     stars: 0,
     completed: false,
@@ -624,6 +633,7 @@ export const mysteries: Mystery[] = [
     description: 'Snow is falling! Find words that end in "-ow" to play in the snow.',
     detective: characters[3],
     wordFamily: '-ow',
+    order: 33,
     difficulty: 'medium',
     stars: 0,
     completed: false,
@@ -641,6 +651,7 @@ export const mysteries: Mystery[] = [
     description: 'The king lost his ring! Find words that end in "-ing" to help.',
     detective: characters[4],
     wordFamily: '-ing',
+    order: 49,
     difficulty: 'hard',
     stars: 0,
     completed: false,
@@ -658,6 +669,7 @@ export const mysteries: Mystery[] = [
     description: 'The duck needs luck! Find words that end in "-uck" to help.',
     detective: characters[5],
     wordFamily: '-uck',
+    order: 50,
     difficulty: 'easy',
     stars: 0,
     completed: false,
@@ -669,6 +681,56 @@ export const mysteries: Mystery[] = [
       { id: 4, text: 'The duck was free! Cluck cluck!', clue: 'Happy ending!' }
     ]
   }
+];
+
+// Placeholder lessons for word families in the learning sequence that do not
+// have a story yet. These are shown greyed-out in the lesson list and are not
+// playable. Real stories carry their own `order` field in the `mysteries`
+// array above; these fill the gaps in the sequence.
+export const comingSoonLessons: ComingSoonLesson[] = [
+  // 1. Short vowel CVC
+  { id: 'cs-an', wordFamily: '-an', title: '-an family', order: 2, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-ap', wordFamily: '-ap', title: '-ap family', order: 3, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-in', wordFamily: '-in', title: '-in family', order: 5, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-it', wordFamily: '-it', title: '-it family', order: 6, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-ot', wordFamily: '-ot', title: '-ot family', order: 8, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-og', wordFamily: '-og', title: '-og family', order: 9, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-ug', wordFamily: '-ug', title: '-ug family', order: 10, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-ut', wordFamily: '-ut', title: '-ut family', order: 12, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-ed', wordFamily: '-ed', title: '-ed family', order: 13, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-en', wordFamily: '-en', title: '-en family', order: 14, status: 'coming-soon', group: 'Short Vowel CVC' },
+  { id: 'cs-et', wordFamily: '-et', title: '-et family', order: 15, status: 'coming-soon', group: 'Short Vowel CVC' },
+  // 2. Long vowel silent-e
+  { id: 'cs-ame', wordFamily: '-ame', title: '-ame family', order: 17, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ate', wordFamily: '-ate', title: '-ate family', order: 18, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ale', wordFamily: '-ale', title: '-ale family', order: 19, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ide', wordFamily: '-ide', title: '-ide family', order: 20, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ine', wordFamily: '-ine', title: '-ine family', order: 21, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ike', wordFamily: '-ike', title: '-ike family', order: 22, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ope', wordFamily: '-ope', title: '-ope family', order: 23, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-one', wordFamily: '-one', title: '-one family', order: 24, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ose', wordFamily: '-ose', title: '-ose family', order: 25, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-ute', wordFamily: '-ute', title: '-ute family', order: 26, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  { id: 'cs-une', wordFamily: '-une', title: '-une family', order: 27, status: 'coming-soon', group: 'Long Vowel Silent-e' },
+  // 3. Vowel teams
+  { id: 'cs-ay', wordFamily: '-ay', title: '-ay family', order: 28, status: 'coming-soon', group: 'Vowel Teams' },
+  { id: 'cs-ai', wordFamily: '-ai', title: '-ai family', order: 29, status: 'coming-soon', group: 'Vowel Teams' },
+  { id: 'cs-ee', wordFamily: '-ee', title: '-ee family', order: 30, status: 'coming-soon', group: 'Vowel Teams' },
+  { id: 'cs-ea', wordFamily: '-ea', title: '-ea family', order: 31, status: 'coming-soon', group: 'Vowel Teams' },
+  { id: 'cs-oa', wordFamily: '-oa', title: '-oa family', order: 32, status: 'coming-soon', group: 'Vowel Teams' },
+  // 4. R-controlled vowels
+  { id: 'cs-ar', wordFamily: '-ar', title: '-ar family', order: 35, status: 'coming-soon', group: 'R-Controlled Vowels' },
+  { id: 'cs-or', wordFamily: '-or', title: '-or family', order: 36, status: 'coming-soon', group: 'R-Controlled Vowels' },
+  { id: 'cs-er', wordFamily: '-er', title: '-er family', order: 37, status: 'coming-soon', group: 'R-Controlled Vowels' },
+  { id: 'cs-ir', wordFamily: '-ir', title: '-ir family', order: 38, status: 'coming-soon', group: 'R-Controlled Vowels' },
+  { id: 'cs-ur', wordFamily: '-ur', title: '-ur family', order: 39, status: 'coming-soon', group: 'R-Controlled Vowels' },
+  // 5. Diphthongs and less common patterns
+  { id: 'cs-oy', wordFamily: '-oy', title: '-oy family', order: 40, status: 'coming-soon', group: 'Diphthongs & Less Common' },
+  { id: 'cs-oi', wordFamily: '-oi', title: '-oi family', order: 41, status: 'coming-soon', group: 'Diphthongs & Less Common' },
+  { id: 'cs-ow-diphthong', wordFamily: '-ow', title: '-ow family (as in cow)', order: 42, status: 'coming-soon', group: 'Diphthongs & Less Common' },
+  { id: 'cs-ou', wordFamily: '-ou', title: '-ou family', order: 43, status: 'coming-soon', group: 'Diphthongs & Less Common' },
+  { id: 'cs-aw', wordFamily: '-aw', title: '-aw family', order: 44, status: 'coming-soon', group: 'Diphthongs & Less Common' },
+  { id: 'cs-au', wordFamily: '-au', title: '-au family', order: 45, status: 'coming-soon', group: 'Diphthongs & Less Common' },
 ];
 
 export const badges: Badge[] = [
