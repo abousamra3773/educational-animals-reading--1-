@@ -67,7 +67,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'bella_bunny': {
     id: 'bella_bunny',
     name: 'Bella Bunny',
-    image: '/characters/bella_bunny_detective.png',
+    image: '/characters/bella_bunny_town.jpg',
 
     role: 'Adventurer',
     color: 'ring-pink-400 bg-pink-100',
@@ -85,14 +85,14 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
     textColor: 'text-purple-700'
   },
 
-  // Matt the Cat - Lost Hat story
+  // Matt the Cat - Lost Hat story (black & white tuxedo town character)
   'matt_cat': {
     id: 'matt_cat',
     name: 'Matt the Cat',
-    image: '/characters/milo_cat_detective.png',
+    image: '/characters/matt_cat_tuxedo.jpg',
     role: 'Helper',
-    color: 'ring-orange-400 bg-orange-100',
-    textColor: 'text-orange-700'
+    color: 'ring-gray-500 bg-gray-100',
+    textColor: 'text-gray-700'
   },
 
   // Oliver Owl - Various stories
