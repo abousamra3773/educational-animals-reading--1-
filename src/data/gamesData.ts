@@ -145,7 +145,7 @@ function generateChooseRightWord(mysteryId: string, words: string[]): { sentence
     'missing-cake': [
       { sentence: 'Jake the Snake needed to _____ a cake for the town party.', blank: 'bake', correctAnswer: 'bake', options: ['bake', 'run', 'sleep'] },
       { sentence: 'The special _____ was missing from the bakery!', blank: 'recipe', correctAnswer: 'recipe', options: ['recipe', 'book', 'chair'] },
-      { sentence: 'Jake put the recipe by the _____ that morning.', blank: 'lake', correctAnswer: 'lake', options: ['lake', 'tree', 'house'] },
+      { sentence: 'Pancake the Cat looked out over the _____.', blank: 'lake', correctAnswer: 'lake', options: ['lake', 'tree', 'house'] },
       { sentence: 'Pancake the Cat saw the paper _____ to the floor.', blank: 'fall', correctAnswer: 'fall', options: ['fall', 'jump', 'fly'] },
       { sentence: 'The recipe slipped under the mat by _____.', blank: 'mistake', correctAnswer: 'mistake', options: ['mistake', 'magic', 'purpose'] },
     ],
