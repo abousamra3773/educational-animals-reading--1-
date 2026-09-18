@@ -120,66 +120,78 @@ export const mysteries: Mystery[] = [
       {
         id: 1,
         title: 'Scene 1',
-        image: '/stories/ake/scene1-bakery.jpg',
+        image: '/stories/ake/scene1.jpg',
         dialogue: [
           { speaker: 'Jake the Snake', text: 'Oh no! I need to bake a cake.', emotion: 'worried' },
           { speaker: 'narrator', text: 'Jake cannot find his recipe.' },
-          { speaker: 'detective', text: 'I will help you!', emotion: 'excited' }
+          { speaker: 'Misty the Cat', text: 'I will help you!', emotion: 'excited' }
         ]
       },
       {
         id: 2,
         title: 'Scene 2',
-        image: '/stories/ake/scene2-lake-memory.jpg',
+        image: '/stories/ake/scene2.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'I put it by the lake this morning. Did I take it back?', emotion: 'thinking' },
-          { speaker: 'narrator', text: 'Jake tries to remember. Where did he leave it?' },
-          { speaker: 'detective', text: "Let's ask Pancake!", emotion: 'excited' }
+          { speaker: 'Misty the Cat', text: 'Let me take a look.', emotion: 'thinking' },
+          { speaker: 'narrator', text: 'Misty will make a plan.' },
+          { speaker: 'Jake the Snake', text: 'I need to make a cake.', emotion: 'sad' }
         ]
       },
       {
         id: 3,
         title: 'Scene 3',
-        image: '/stories/ake/scene3-pancake-clue.jpg',
+        image: '/stories/ake/scene3.jpg',
         dialogue: [
-          { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter. It slipped away!', emotion: 'surprised' },
-          { speaker: 'narrator', text: 'Pancake points to the door with her paw.' },
-          { speaker: 'detective', text: 'Follow the clue!', emotion: 'excited' }
+          { speaker: 'Misty the Cat', text: "Let's think.", emotion: 'thinking' },
+          { speaker: 'narrator', text: 'One eye opens... Pancake wakes up!' },
+          { speaker: 'Pancake the Cat', text: 'I woke up! I can help!', emotion: 'excited' }
         ]
       },
       {
         id: 4,
         title: 'Scene 4',
-        image: '/stories/ake/scene4-find-recipe.jpg',
-        headerText: 'Can you find the missing recipe? Click on the recipe to help Jake the Snake.',
+        image: '/stories/ake/scene4.jpg',
         dialogue: [
-          { speaker: 'detective', text: 'There it is! The recipe slipped under the mat by mistake.', emotion: 'happy' },
-          { speaker: 'narrator', text: 'The detective hands the recipe back to Jake.' }
-        ],
-        isInteractive: true,
-        interactiveTarget: {
-          description: 'Recipe paper under the doormat',
-          hint: 'Look near the door!',
-          position: { x: 30, y: 78, width: 28, height: 20 }
-        }
+          { speaker: 'narrator', text: 'Pancake looks out at the lake.' },
+          { speaker: 'Pancake the Cat', text: 'I saw it fall! Jake tried to make the batter and it slipped away.', emotion: 'surprised' },
+          { speaker: 'Misty the Cat', text: 'Follow the clue!', emotion: 'excited' }
+        ]
       },
       {
         id: 5,
         title: 'Scene 5',
-        image: '/stories/ake/scene5-recipe-found.jpg',
+        image: '/stories/ake/scene5.jpg',
         dialogue: [
-          { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
-          { speaker: 'narrator', text: 'Jake is so happy! He will make the best cake.' },
-          { speaker: 'detective', text: 'Hooray!', emotion: 'excited' }
+          { speaker: 'narrator', text: 'The detectives follow Pancake to the door.' },
+          { speaker: 'Misty the Cat', text: 'It must be near the door.', emotion: 'thinking' },
+          { speaker: 'Jake the Snake', text: 'Please find my recipe!', emotion: 'worried' }
         ]
       },
       {
         id: 6,
         title: 'Scene 6',
-        image: '/stories/ake/scene6-well-done.jpg',
+        image: '/stories/ake/scene6.jpg',
+        headerText: 'Can you find the missing recipe? Click on the recipe to help Jake the Snake.',
         dialogue: [
+          { speaker: 'Misty the Cat', text: 'There it is! The recipe slipped under the mat by mistake.', emotion: 'happy' },
+          { speaker: 'narrator', text: 'Misty hands the recipe back to Jake.' },
+          { speaker: 'Jake the Snake', text: 'Thank you, Misty!', emotion: 'happy' }
+        ],
+        isInteractive: true,
+        interactiveTarget: {
+          description: 'Recipe paper under the doormat',
+          hint: 'Look near the door!',
+          position: { x: 32, y: 80, width: 28, height: 18 }
+        }
+      },
+      {
+        id: 7,
+        title: 'Scene 7',
+        image: '/stories/ake/scene7.jpg',
+        dialogue: [
+          { speaker: 'Jake the Snake', text: 'You found it! Now I can bake my cake!', emotion: 'happy' },
           { speaker: 'Pancake the Cat', text: 'Great job, Detective!', emotion: 'happy' },
-          { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words.' }
+          { speaker: 'narrator', text: 'You helped Jake find his recipe! Time to practice your -AKE words: bake, cake, make, take, rake, lake, snake, wake.' }
         ]
       }
     ],
