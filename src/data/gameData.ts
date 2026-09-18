@@ -144,7 +144,7 @@ export const mysteries: Mystery[] = [
         dialogue: [
           { speaker: 'Misty the Cat', text: "Let's think.", emotion: 'thinking' },
           { speaker: 'narrator', text: 'One eye opens... Pancake wakes up!' },
-          { speaker: 'Pancake the Cat', text: 'I woke up! I can help!', emotion: 'excited' }
+          { speaker: 'Pancake the Cat', text: "I'm awake! I can help!", emotion: 'excited' }
         ]
       },
       {
