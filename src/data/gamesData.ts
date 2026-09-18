@@ -101,10 +101,10 @@ function generateStorySequencingEvents(mysteryId: string, scenes: StoryScene[]):
   const customEvents: Record<string, { id: number; text: string; correctOrder: number }[]> = {
     'missing-cake': [
       { id: 1, text: 'Jake the Snake discovers his cake recipe is missing.', correctOrder: 1 },
-      { id: 2, text: 'Jake remembers he put the recipe by the lake.', correctOrder: 2 },
-      { id: 3, text: 'Pancake the Cat says she saw the recipe fall.', correctOrder: 3 },
-      { id: 4, text: 'The detective finds the recipe under the doormat.', correctOrder: 4 },
-      { id: 5, text: 'Jake is happy and can now bake his cake!', correctOrder: 5 },
+      { id: 2, text: 'Misty the Cat offers to help find the recipe.', correctOrder: 2 },
+      { id: 3, text: 'Pancake the Cat wakes up and joins the search.', correctOrder: 3 },
+      { id: 4, text: 'Pancake the Cat says she saw the recipe fall.', correctOrder: 4 },
+      { id: 5, text: 'The detectives find the recipe under the doormat, and Jake can bake his cake!', correctOrder: 5 },
     ],
     'lost-hat': [
       { id: 1, text: 'Bella Bunny sat on her mat with Matt the Cat.', correctOrder: 1 },
