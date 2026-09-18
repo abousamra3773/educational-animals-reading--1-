@@ -26,7 +26,7 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
   'pancake_cat': {
     id: 'pancake_cat',
     name: 'Pancake the Cat',
-    image: '/characters/milo_cat_detective.png',
+    image: '/characters/pancake_cat_detective.png',
     role: 'Helper',
     color: 'ring-orange-400 bg-orange-100',
     textColor: 'text-orange-700'

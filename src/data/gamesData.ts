@@ -101,10 +101,10 @@ function generateStorySequencingEvents(mysteryId: string, scenes: StoryScene[]):
   const customEvents: Record<string, { id: number; text: string; correctOrder: number }[]> = {
     'missing-cake': [
       { id: 1, text: 'Jake the Snake discovers his cake recipe is missing.', correctOrder: 1 },
-      { id: 2, text: 'Jake remembers he put the recipe by the lake.', correctOrder: 2 },
-      { id: 3, text: 'Pancake the Cat says she saw the recipe fall.', correctOrder: 3 },
-      { id: 4, text: 'The detective finds the recipe under the doormat.', correctOrder: 4 },
-      { id: 5, text: 'Jake is happy and can now bake his cake!', correctOrder: 5 },
+      { id: 2, text: 'Misty the Cat offers to help find the recipe.', correctOrder: 2 },
+      { id: 3, text: 'Pancake the Cat wakes up and joins the search.', correctOrder: 3 },
+      { id: 4, text: 'Pancake the Cat says she saw the recipe fall.', correctOrder: 4 },
+      { id: 5, text: 'The detectives find the recipe under the doormat, and Jake can bake his cake!', correctOrder: 5 },
     ],
     'lost-hat': [
       { id: 1, text: 'Bella Bunny sat on her mat with Matt the Cat.', correctOrder: 1 },
@@ -145,7 +145,7 @@ function generateChooseRightWord(mysteryId: string, words: string[]): { sentence
     'missing-cake': [
       { sentence: 'Jake the Snake needed to _____ a cake for the town party.', blank: 'bake', correctAnswer: 'bake', options: ['bake', 'run', 'sleep'] },
       { sentence: 'The special _____ was missing from the bakery!', blank: 'recipe', correctAnswer: 'recipe', options: ['recipe', 'book', 'chair'] },
-      { sentence: 'Jake put the recipe by the _____ that morning.', blank: 'lake', correctAnswer: 'lake', options: ['lake', 'tree', 'house'] },
+      { sentence: 'Pancake the Cat looked out over the _____.', blank: 'lake', correctAnswer: 'lake', options: ['lake', 'tree', 'house'] },
       { sentence: 'Pancake the Cat saw the paper _____ to the floor.', blank: 'fall', correctAnswer: 'fall', options: ['fall', 'jump', 'fly'] },
       { sentence: 'The recipe slipped under the mat by _____.', blank: 'mistake', correctAnswer: 'mistake', options: ['mistake', 'magic', 'purpose'] },
     ],
@@ -222,7 +222,7 @@ function generateComprehensionQuiz(mysteryId: string, words: string[]): { questi
   const quizzes: Record<string, { question: string; correctAnswer: string; options: string[] }[]> = {
     'missing-cake': [
       { question: 'What was Jake the Snake trying to bake?', correctAnswer: 'A cake for the town party', options: ['A cake for the town party', 'Cookies for his friends', 'Bread for the bakery'] },
-      { question: 'Where did Jake put the recipe that morning?', correctAnswer: 'By the lake', options: ['By the lake', 'On the table', 'In the oven'] },
+      { question: 'What did Pancake the Cat look out over?', correctAnswer: 'The lake', options: ['The lake', 'The garden', 'The street'] },
       { question: 'Who saw the recipe fall?', correctAnswer: 'Pancake the Cat', options: ['Pancake the Cat', 'Mabel the Mouse', 'Oliver the Owl'] },
       { question: 'Where was the recipe hiding?', correctAnswer: 'Under the doormat', options: ['Under the doormat', 'In the basket', 'By the window'] },
       { question: 'How did Jake feel when the recipe was found?', correctAnswer: 'Very happy', options: ['Very happy', 'Still worried', 'Sleepy'] },
