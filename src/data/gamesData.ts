@@ -222,7 +222,7 @@ function generateComprehensionQuiz(mysteryId: string, words: string[]): { questi
   const quizzes: Record<string, { question: string; correctAnswer: string; options: string[] }[]> = {
     'missing-cake': [
       { question: 'What was Jake the Snake trying to bake?', correctAnswer: 'A cake for the town party', options: ['A cake for the town party', 'Cookies for his friends', 'Bread for the bakery'] },
-      { question: 'Where did Jake put the recipe that morning?', correctAnswer: 'By the lake', options: ['By the lake', 'On the table', 'In the oven'] },
+      { question: 'What did Pancake the Cat look out over?', correctAnswer: 'The lake', options: ['The lake', 'The garden', 'The street'] },
       { question: 'Who saw the recipe fall?', correctAnswer: 'Pancake the Cat', options: ['Pancake the Cat', 'Mabel the Mouse', 'Oliver the Owl'] },
       { question: 'Where was the recipe hiding?', correctAnswer: 'Under the doormat', options: ['Under the doormat', 'In the basket', 'By the window'] },
       { question: 'How did Jake feel when the recipe was found?', correctAnswer: 'Very happy', options: ['Very happy', 'Still worried', 'Sleepy'] },
