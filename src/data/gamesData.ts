@@ -12,6 +12,7 @@ export function generateGameData(
   // Common distractor words for various word families
   const distractorPools: Record<string, string[]> = {
     '-ake': ['apple', 'book', 'cat', 'dog', 'fish', 'green', 'happy', 'jump'],
+    '-an': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
     '-at': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
     '-ig': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
     '-eep': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
@@ -106,6 +107,13 @@ function generateStorySequencingEvents(mysteryId: string, scenes: StoryScene[]):
       { id: 4, text: 'Pancake the Cat says she saw the recipe fall.', correctOrder: 4 },
       { id: 5, text: 'The detectives find the recipe under the doormat, and Jake can bake his cake!', correctOrder: 5 },
     ],
+    'dancing-can': [
+      { id: 1, text: 'A tin can goes CLANG and rolls around the town square.', correctOrder: 1 },
+      { id: 2, text: 'The can runs away and Mabel Mouse runs after it.', correctOrder: 2 },
+      { id: 3, text: 'By the bench, the friends feel cool air from a fan.', correctOrder: 3 },
+      { id: 4, text: 'They find a loose switch that keeps the fan on.', correctOrder: 4 },
+      { id: 5, text: 'They turn the fan off and the can stops dancing!', correctOrder: 5 },
+    ],
     'lost-hat': [
       { id: 1, text: 'Bella Bunny sat on her mat with Matt the Cat.', correctOrder: 1 },
       { id: 2, text: 'Batty the Bat flew by and took Bella\'s hat!', correctOrder: 2 },
@@ -148,6 +156,13 @@ function generateChooseRightWord(mysteryId: string, words: string[]): { sentence
       { sentence: 'Pancake the Cat looked out over the _____.', blank: 'lake', correctAnswer: 'lake', options: ['lake', 'tree', 'house'] },
       { sentence: 'Pancake the Cat saw the paper _____ to the floor.', blank: 'fall', correctAnswer: 'fall', options: ['fall', 'jump', 'fly'] },
       { sentence: 'The recipe slipped under the mat by _____.', blank: 'mistake', correctAnswer: 'mistake', options: ['mistake', 'magic', 'purpose'] },
+    ],
+    'dancing-can': [
+      { sentence: 'A little tin _____ rolled across the square.', blank: 'can', correctAnswer: 'can', options: ['can', 'box', 'cup'] },
+      { sentence: 'Mabel Mouse _____ after the rolling can.', blank: 'ran', correctAnswer: 'ran', options: ['ran', 'sat', 'hid'] },
+      { sentence: 'Benny said, "We need a _____!"', blank: 'plan', correctAnswer: 'plan', options: ['plan', 'nap', 'song'] },
+      { sentence: 'The cool air came from a _____.', blank: 'fan', correctAnswer: 'fan', options: ['fan', 'car', 'bell'] },
+      { sentence: 'A fan can _____ a can and make it move.', blank: 'push', correctAnswer: 'push', options: ['push', 'eat', 'read'] },
     ],
     'lost-hat': [
       { sentence: 'Bella\'s _____ flew away in the wind.', blank: 'hat', correctAnswer: 'hat', options: ['hat', 'ball', 'kite'] },
@@ -226,6 +241,13 @@ function generateComprehensionQuiz(mysteryId: string, words: string[]): { questi
       { question: 'Who saw the recipe fall?', correctAnswer: 'Pancake the Cat', options: ['Pancake the Cat', 'Mabel the Mouse', 'Oliver the Owl'] },
       { question: 'Where was the recipe hiding?', correctAnswer: 'Under the doormat', options: ['Under the doormat', 'In the basket', 'By the window'] },
       { question: 'How did Jake feel when the recipe was found?', correctAnswer: 'Very happy', options: ['Very happy', 'Still worried', 'Sleepy'] },
+    ],
+    'dancing-can': [
+      { question: 'What was dancing around the town square?', correctAnswer: 'A tin can', options: ['A tin can', 'A ball', 'A leaf'] },
+      { question: 'Who ran after the can?', correctAnswer: 'Mabel Mouse', options: ['Mabel Mouse', 'Benny Bear', 'Willa Warbler'] },
+      { question: 'What did the friends feel by the bench?', correctAnswer: 'Cool air', options: ['Cool air', 'Warm sun', 'Rain'] },
+      { question: 'What was making the can move?', correctAnswer: 'A fan with a loose switch', options: ['A fan with a loose switch', 'A magic spell', 'The wind from a storm'] },
+      { question: 'How did they stop the can from dancing?', correctAnswer: 'They turned the fan off', options: ['They turned the fan off', 'They hid the can', 'They ran away'] },
     ],
     'lost-hat': [
       { question: 'Who was sitting on the mat at the beginning?', correctAnswer: 'Bella Bunny and Matt the Cat', options: ['Bella Bunny and Matt the Cat', 'Batty the Bat', 'Ted the Turtle'] },
