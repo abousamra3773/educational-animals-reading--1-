@@ -226,7 +226,7 @@ export const mysteries: Mystery[] = [
         dialogue: [
           { speaker: 'narrator', text: 'I am Willa. Our tale starts in the town square.' },
           { speaker: 'Benny Bear', text: 'Look! A tin can. It went CLANG!', emotion: 'surprised' },
-          { speaker: 'Mabel Mouse', text: 'A can can not dance. What now?', emotion: 'thinking' }
+          { speaker: 'Mabel Mouse', text: 'A can cannot dance. What now?', emotion: 'thinking' }
         ]
       },
       {
