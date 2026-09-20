@@ -199,6 +199,97 @@ export const mysteries: Mystery[] = [
   },
 
   {
+    id: 'dancing-can',
+    title: 'The Case of the Dancing Can',
+    tagline: 'Something is making a can dance!',
+    description: 'A little tin can keeps rolling around the town square all by itself! Help Benny Bear and Mabel Mouse find out why with words that end in "-an".',
+    detective: characters[4],
+    wordFamily: '-an',
+    order: 2,
+    difficulty: 'easy',
+    stars: 0,
+    completed: false,
+    words: ['an', 'can', 'man', 'pan', 'fan', 'van', 'ran', 'plan', 'tan'],
+    story: [
+      { id: 1, text: 'A tin can went CLANG in the town square.', clue: 'Find words that end in -an!' },
+      { id: 2, text: 'The can ran and Mabel ran after it.', clue: 'We need a plan!' },
+      { id: 3, text: 'By the bench, the friends felt cool air.', clue: 'What is making the wind?' },
+      { id: 4, text: 'A fan with a loose switch was on!', clue: 'You found the clue!' },
+      { id: 5, text: 'Click! The fan went off and the can stopped.', clue: 'Mystery solved!' },
+      { id: 6, text: 'Great job, Detective! You read your -an words!', clue: 'Time to practice your -AN words!' }
+    ],
+    scenes: [
+      {
+        id: 1,
+        title: 'Scene 1',
+        image: '/stories/an/scene1.jpg',
+        dialogue: [
+          { speaker: 'narrator', text: 'I am Willa. Our tale starts in the town square.' },
+          { speaker: 'Benny Bear', text: 'Look! A tin can. It went CLANG!', emotion: 'surprised' },
+          { speaker: 'Mabel Mouse', text: 'A can cannot dance. What now?', emotion: 'thinking' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Scene 2',
+        image: '/stories/an/scene2.jpg',
+        dialogue: [
+          { speaker: 'narrator', text: 'The can ran fast down the lane.' },
+          { speaker: 'Mabel Mouse', text: 'I ran and ran. That can is quick!', emotion: 'excited' },
+          { speaker: 'Benny Bear', text: 'Wait! We need a plan.', emotion: 'thinking' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Scene 3',
+        image: '/stories/an/scene3.jpg',
+        dialogue: [
+          { speaker: 'narrator', text: 'By the bench, the friends felt cool air.' },
+          { speaker: 'Benny Bear', text: 'Do you feel that? It is a fan!', emotion: 'surprised' },
+          { speaker: 'Mabel Mouse', text: 'A fan can push a can!', emotion: 'excited' }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Scene 4',
+        image: '/stories/an/scene4.jpg',
+        headerText: 'Can you find the loose switch behind the bench? Click on it to help Benny and Mabel!',
+        dialogue: [
+          { speaker: 'narrator', text: 'Mabel looks close with her glass.' },
+          { speaker: 'Mabel Mouse', text: 'Yes! Found it! A loose switch.', emotion: 'happy' },
+          { speaker: 'Benny Bear', text: 'The switch keeps the fan on!', emotion: 'excited' }
+        ],
+        isInteractive: true,
+        interactiveTarget: {
+          description: 'Loose switch on the wire behind the bench',
+          hint: 'Look on the wire by the bench!',
+          position: { x: 58, y: 60, width: 18, height: 22 }
+        }
+      },
+      {
+        id: 5,
+        title: 'Scene 5',
+        image: '/stories/an/scene5.jpg',
+        dialogue: [
+          { speaker: 'narrator', text: 'Click! The fan is off now.' },
+          { speaker: 'Mabel Mouse', text: 'The can stops. No more dance!', emotion: 'happy' },
+          { speaker: 'Benny Bear', text: 'Case closed! Good plan, Mabel.', emotion: 'happy' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Scene 6',
+        image: '/stories/an/scene6.jpg',
+        dialogue: [
+          { speaker: 'Benny Bear', text: 'We had a plan and it ran well!', emotion: 'happy' },
+          { speaker: 'Mabel Mouse', text: 'You can read -an words now!', emotion: 'excited' },
+          { speaker: 'narrator', text: 'Great job, Detective! The wind, not magic, made the can dance. Time to practice your -AN words: an, can, man, pan, fan, van, ran, plan, tan.' }
+        ]
+      }
+    ]
+  },
+
+  {
     id: 'lost-hat',
     title: 'The Case of the Lost Hat',
     tagline: 'Help Bella Bunny find her favorite hat!',
@@ -701,7 +792,6 @@ export const mysteries: Mystery[] = [
 // array above; these fill the gaps in the sequence.
 export const comingSoonLessons: ComingSoonLesson[] = [
   // 1. Short vowel CVC
-  { id: 'cs-an', wordFamily: '-an', title: '-an family', order: 2, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-ap', wordFamily: '-ap', title: '-ap family', order: 3, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-in', wordFamily: '-in', title: '-in family', order: 5, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-it', wordFamily: '-it', title: '-it family', order: 6, status: 'coming-soon', group: 'Short Vowel CVC' },
