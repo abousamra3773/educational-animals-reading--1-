@@ -325,10 +325,10 @@ export const mysteries: Mystery[] = [
         title: 'Scene 1',
         image: '/stories/ap/scene1.jpg',
         dialogue: [
-          { speaker: 'Farah the Fawn', text: 'Oh no! My cap!', emotion: 'worried' },
-          { speaker: 'narrator', text: 'Farah lost her cap at the Acorn Store.' },
-          { speaker: 'Zap the Squirrel', text: 'I can help you!', emotion: 'excited' },
-          { speaker: 'Mitzy the Mole', text: 'Let us see the map.', emotion: 'thinking' }
+            { speaker: 'Farah the Fawn', text: "Oh no, my mama's cap! I lost it in the woods.", emotion: 'worried' },
+            { speaker: 'Willa the Warbler', text: "Farah lost her Mama's cap when she took a nap.", emotion: 'thinking' },
+            { speaker: 'Zap the Squirrel', text: 'I can help you!', emotion: 'excited' },
+            { speaker: 'Mitzy the Mole', text: "Let's see the map.", emotion: 'thinking' }
         ]
       },
       {
@@ -375,7 +375,7 @@ export const mysteries: Mystery[] = [
         dialogue: [
           { speaker: 'Zap the Squirrel', text: 'Zap! I got the cap!', emotion: 'happy' },
           { speaker: 'Mitzy the Mole', text: 'Now it is in your lap!', emotion: 'happy' },
-          { speaker: 'Farah the Fawn', text: 'You found my cap!', emotion: 'happy' }
+            { speaker: 'Farah the Fawn', text: "You found my mama's cap!", emotion: 'happy' }
         ]
       },
       {

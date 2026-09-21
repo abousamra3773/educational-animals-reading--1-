@@ -222,6 +222,7 @@ export function getCharacterAvatar(speaker: string, narratorId?: string): Charac
   if (speakerLower.includes('zap')) return characterAvatars['zap_squirrel'];
   if (speakerLower.includes('mitzy') || speakerLower.includes('mole')) return characterAvatars['mitzy_mole'];
   if (speakerLower.includes('farah') || speakerLower.includes('fawn')) return characterAvatars['farah_fawn'];
+  if (speakerLower.includes('willa') || speakerLower.includes('warbler')) return characterAvatars['willa_warbler'];
   
   // Generic animal matches (fallback)
   if (speakerLower.includes('snake')) return characterAvatars['jake_snake'];
