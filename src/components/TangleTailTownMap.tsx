@@ -21,7 +21,7 @@ interface Hotspot {
 const HOTSPOTS: Hotspot[] = [
   {
     id: 'sweet-paws',
-    name: 'Sweet Paws Sweets & Ice Cream',
+    name: 'Sweet Paws Treats and Ice Cream',
     description: 'The cupcake shop in the heart of town — sweets, treats, and ice cream.',
     x: 42,
     y: 43,
