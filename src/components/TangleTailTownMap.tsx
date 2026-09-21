@@ -310,31 +310,55 @@ export const TangleTailTownMap: React.FC = () => {
                 );
               })}
 
-              {/* Directional signposts */}
-              {SIGNS.map((sign) => (
-                <div
-                  key={sign.id}
-                  className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2"
-                  style={{ left: `${sign.x}%`, top: `${sign.y}%` }}
-                >
-                  <div className="flex items-center gap-1.5 rounded-md border border-amber-800/40 bg-amber-50/95 px-2 py-1 shadow-md">
-                    {sign.dot && (
-                      <span className="relative flex h-2.5 w-2.5 shrink-0">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/60" />
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-600 ring-2 ring-white" />
-                      </span>
-                    )}
-                    <span className="whitespace-nowrap font-serif text-[10px] font-bold leading-none text-amber-900 sm:text-xs">
-                      {sign.label}
-                    </span>
-                    {sign.arrow === 'up-right' ? (
-                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-amber-900" />
-                    ) : (
-                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-amber-900" />
+              {/* Directional signposts — red dot with hover tooltip */}
+              {SIGNS.map((sign) => {
+                const isActive = activeId === sign.id;
+                const showAbove = sign.y > 55;
+                return (
+                  <div
+                    key={sign.id}
+                    className="absolute -translate-x-1/2 -translate-y-1/2"
+                    style={{ left: `${sign.x}%`, top: `${sign.y}%` }}
+                    onMouseEnter={() => setActiveId(sign.id)}
+                    onMouseLeave={() =>
+                      setActiveId((current) => (current === sign.id ? null : current))
+                    }
+                  >
+                    <button
+                      type="button"
+                      onClick={() => handleHotspotActivate(sign.id)}
+                      aria-label={sign.label}
+                      className={`group flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-rose-500/90 shadow-lg outline-none ring-rose-300 transition-transform hover:scale-125 focus-visible:ring-4 ${
+                        isActive ? 'scale-125 bg-rose-600' : ''
+                      }`}
+                    >
+                      <span className="h-2 w-2 rounded-full bg-white" />
+                      <span className="absolute inline-flex h-6 w-6 animate-ping rounded-full bg-rose-400/50" />
+                    </button>
+
+                    {/* Tooltip with directional arrow */}
+                    {isActive && (
+                      <div
+                        className={`absolute left-1/2 z-30 w-52 -translate-x-1/2 ${
+                          showAbove ? 'bottom-8' : 'top-8'
+                        }`}
+                        role="tooltip"
+                      >
+                        <div className="flex items-center gap-1.5 rounded-xl border border-amber-200 bg-white/95 p-3 text-left shadow-xl backdrop-blur">
+                          <span className="font-serif text-sm font-bold text-amber-900">
+                            {sign.label}
+                          </span>
+                          {sign.arrow === 'up-right' ? (
+                            <ArrowUpRight className="h-4 w-4 shrink-0 text-rose-600" />
+                          ) : (
+                            <ArrowRight className="h-4 w-4 shrink-0 text-rose-600" />
+                          )}
+                        </div>
+                      </div>
                     )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
