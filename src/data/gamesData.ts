@@ -12,6 +12,7 @@ export function generateGameData(
   // Common distractor words for various word families
   const distractorPools: Record<string, string[]> = {
     '-ake': ['apple', 'book', 'cat', 'dog', 'fish', 'green', 'happy', 'jump'],
+    '-ap': ['sun', 'dog', 'bed', 'fish', 'cup', 'hat', 'pig', 'top'],
     '-an': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
     '-at': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
     '-ig': ['apple', 'book', 'cake', 'dog', 'fish', 'green', 'happy', 'jump'],
@@ -114,6 +115,13 @@ function generateStorySequencingEvents(mysteryId: string, scenes: StoryScene[]):
       { id: 4, text: 'They find a loose switch that keeps the fan on.', correctOrder: 4 },
       { id: 5, text: 'They turn the fan off and the can stops dancing!', correctOrder: 5 },
     ],
+    'flapping-cap': [
+      { id: 1, text: 'Farah the Fawn loses her red cap at the Acorn Store.', correctOrder: 1 },
+      { id: 2, text: 'Zap and Mitzy look at the map to find the cap.', correctOrder: 2 },
+      { id: 3, text: 'In the woods, the wind made the cap flap up into a tree.', correctOrder: 3 },
+      { id: 4, text: 'Zap taps the branch: tap, tap, tap!', correctOrder: 4 },
+      { id: 5, text: 'The cap falls into Farah\'s lap and everyone claps!', correctOrder: 5 },
+    ],
     'lost-hat': [
       { id: 1, text: 'Bella Bunny sat on her mat with Matt the Cat.', correctOrder: 1 },
       { id: 2, text: 'Batty the Bat flew by and took Bella\'s hat!', correctOrder: 2 },
@@ -163,6 +171,13 @@ function generateChooseRightWord(mysteryId: string, words: string[]): { sentence
       { sentence: 'Benny said, "We need a _____!"', blank: 'plan', correctAnswer: 'plan', options: ['plan', 'nap', 'song'] },
       { sentence: 'The cool air came from a _____.', blank: 'fan', correctAnswer: 'fan', options: ['fan', 'car', 'bell'] },
       { sentence: 'A fan can _____ a can and make it move.', blank: 'push', correctAnswer: 'push', options: ['push', 'eat', 'read'] },
+    ],
+    'flapping-cap': [
+      { sentence: 'Farah lost her red _____.', blank: 'cap', correctAnswer: 'cap', options: ['cap', 'cup', 'can'] },
+      { sentence: 'The friends look at the _____ to find it.', blank: 'map', correctAnswer: 'map', options: ['map', 'mop', 'mat'] },
+      { sentence: 'Farah had a _____ under the tree.', blank: 'nap', correctAnswer: 'nap', options: ['nap', 'net', 'nut'] },
+      { sentence: 'Zap will _____ the branch to get the cap.', blank: 'tap', correctAnswer: 'tap', options: ['tap', 'top', 'tip'] },
+      { sentence: 'The cap fell right into Farah\'s _____.', blank: 'lap', correctAnswer: 'lap', options: ['lap', 'leg', 'lip'] },
     ],
     'lost-hat': [
       { sentence: 'Bella\'s _____ flew away in the wind.', blank: 'hat', correctAnswer: 'hat', options: ['hat', 'ball', 'kite'] },
@@ -248,6 +263,13 @@ function generateComprehensionQuiz(mysteryId: string, words: string[]): { questi
       { question: 'What did the friends feel by the bench?', correctAnswer: 'Cool air', options: ['Cool air', 'Warm sun', 'Rain'] },
       { question: 'What was making the can move?', correctAnswer: 'A fan with a loose switch', options: ['A fan with a loose switch', 'A magic spell', 'The wind from a storm'] },
       { question: 'How did they stop the can from dancing?', correctAnswer: 'They turned the fan off', options: ['They turned the fan off', 'They hid the can', 'They ran away'] },
+    ],
+    'flapping-cap': [
+      { question: 'Where does the story begin?', correctAnswer: 'At the Acorn Store', options: ['At the Acorn Store', 'At the bakery', 'At the lake'] },
+      { question: 'What did Farah lose?', correctAnswer: 'Her cap', options: ['Her cap', 'Her map', 'Her scarf'] },
+      { question: 'What did the friends use to find the cap?', correctAnswer: 'A map', options: ['A map', 'A phone', 'A net'] },
+      { question: 'How did the cap get up in the tree?', correctAnswer: 'The wind made it flap up', options: ['The wind made it flap up', 'A bird carried it', 'Zap threw it'] },
+      { question: 'Where did the cap land at the end?', correctAnswer: "In Farah's lap", options: ["In Farah's lap", 'In the lake', 'On the map'] },
     ],
     'lost-hat': [
       { question: 'Who was sitting on the mat at the beginning?', correctAnswer: 'Bella Bunny and Matt the Cat', options: ['Bella Bunny and Matt the Cat', 'Batty the Bat', 'Ted the Turtle'] },

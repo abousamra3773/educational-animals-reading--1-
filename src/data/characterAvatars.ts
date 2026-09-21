@@ -155,6 +155,36 @@ export const characterAvatars: Record<string, CharacterAvatar> = {
     textColor: 'text-pink-700'
   },
 
+  // Zap the Squirrel - detective, owns the Acorn Store (Flapping Cap / -ap story)
+  'zap_squirrel': {
+    id: 'zap_squirrel',
+    name: 'Zap the Squirrel',
+    image: '/characters/zap_squirrel_detective.png',
+    role: 'Detective',
+    color: 'ring-green-400 bg-green-100',
+    textColor: 'text-green-700'
+  },
+
+  // Mitzy the Mole - detective with the map (Flapping Cap / -ap story)
+  'mitzy_mole': {
+    id: 'mitzy_mole',
+    name: 'Mitzy the Mole',
+    image: '/characters/mitzy_mole_detective.png',
+    role: 'Detective',
+    color: 'ring-blue-400 bg-blue-100',
+    textColor: 'text-blue-700'
+  },
+
+  // Farah the Fawn - friend who lost her cap (Flapping Cap / -ap story)
+  'farah_fawn': {
+    id: 'farah_fawn',
+    name: 'Farah the Fawn',
+    image: '/characters/farah_fawn.png',
+    role: 'Friend',
+    color: 'ring-amber-400 bg-amber-100',
+    textColor: 'text-amber-700'
+  },
+
   // Sheepy the Sheep - Sleepy Town
   'sheepy_sheep': {
     id: 'sheepy_sheep',
@@ -189,6 +219,9 @@ export function getCharacterAvatar(speaker: string, narratorId?: string): Charac
   if (speakerLower.includes('finn') && speakerLower.includes('fox')) return characterAvatars['finn_fox'];
   if (speakerLower.includes('piggy') || (speakerLower.includes('pig') && !speakerLower.includes('cat'))) return characterAvatars['piggy_pig'];
   if (speakerLower.includes('sheepy') || speakerLower.includes('sheep')) return characterAvatars['sheepy_sheep'];
+  if (speakerLower.includes('zap')) return characterAvatars['zap_squirrel'];
+  if (speakerLower.includes('mitzy') || speakerLower.includes('mole')) return characterAvatars['mitzy_mole'];
+  if (speakerLower.includes('farah') || speakerLower.includes('fawn')) return characterAvatars['farah_fawn'];
   
   // Generic animal matches (fallback)
   if (speakerLower.includes('snake')) return characterAvatars['jake_snake'];

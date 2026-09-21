@@ -67,7 +67,7 @@ export const townLocations: TownLocation[] = [
     description: "Zap the Squirrel's shop — acorns, maps, and snacks.",
     image: '',
     position: { x: 90, y: 45 },
-    mysteryIds: [],
+    mysteryIds: ['flapping-cap'],
     visited: false,
     completed: false
   },

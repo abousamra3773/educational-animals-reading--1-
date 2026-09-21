@@ -91,6 +91,16 @@ export const characters: Character[] = [
     image: '/characters/leo_labradoodle_detective.png',
     fullBodyImage: '/characters/leo_labradoodle_detective.png',
     color: 'bg-sky-100'
+  },
+  {
+    id: 'zap',
+    name: 'Zap the Squirrel',
+    animal: 'Squirrel',
+    specialty: 'Snapping words together',
+    personality: 'Speedy and kind, Zap runs the Acorn Store and loves to help friends read!',
+    image: '/characters/zap_squirrel_detective.png',
+    fullBodyImage: '/characters/zap_squirrel_detective.png',
+    color: 'bg-green-100'
   }
 ];
 
@@ -287,6 +297,99 @@ export const mysteries: Mystery[] = [
         ]
       }
     ]
+  },
+
+  {
+    id: 'flapping-cap',
+    title: 'The Case of the Flapping Cap',
+    tagline: "Help Farah the Fawn find her missing cap!",
+    description: "Farah lost her red cap at the Acorn Store! Zap the Squirrel and Mitzy the Mole use a map to find it. Read along with words that end in -ap.",
+    detective: characters[9],
+    wordFamily: '-ap',
+    order: 3,
+    difficulty: 'easy',
+    stars: 0,
+    completed: false,
+    words: ['cap', 'map', 'nap', 'tap', 'lap', 'zap', 'flap', 'clap', 'snap'],
+    story: [
+      { id: 1, text: 'Farah is at the Acorn Store. Her cap is gone!', clue: 'Find words that end in -ap!' },
+      { id: 2, text: 'Zap and Mitzy look at the map.', clue: 'The map can help us!' },
+      { id: 3, text: 'Farah had a nap. Her cap went flap!', clue: 'Where did the cap go?' },
+      { id: 4, text: 'Tap, tap, tap! Zap taps the branch.', clue: 'Get the cap down!' },
+      { id: 5, text: 'Zap got the cap! It is in her lap.', clue: 'You found it!' },
+      { id: 6, text: 'Clap, clap, clap! You can read -ap words!', clue: 'Time to practice your -ap words!' }
+    ],
+    scenes: [
+      {
+        id: 1,
+        title: 'Scene 1',
+        image: '/stories/ap/scene1.jpg',
+        dialogue: [
+          { speaker: 'Farah the Fawn', text: 'Oh no! My cap!', emotion: 'worried' },
+          { speaker: 'narrator', text: 'Farah lost her cap at the Acorn Store.' },
+          { speaker: 'Zap the Squirrel', text: 'I can help you!', emotion: 'excited' },
+          { speaker: 'Mitzy the Mole', text: 'Let us see the map.', emotion: 'thinking' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Scene 2',
+        image: '/stories/ap/scene2.jpg',
+        dialogue: [
+          { speaker: 'Mitzy the Mole', text: 'Look! A map!', emotion: 'excited' },
+          { speaker: 'narrator', text: 'The map can show us the cap.' },
+          { speaker: 'Zap the Squirrel', text: 'To the woods we go!', emotion: 'happy' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Scene 3',
+        image: '/stories/ap/scene3.jpg',
+        headerText: 'Can you find the cap? Click the red cap in the tree to help Farah!',
+        dialogue: [
+          { speaker: 'Farah the Fawn', text: 'I had a nap here.', emotion: 'thinking' },
+          { speaker: 'narrator', text: 'The wind blew. The cap went flap, flap, flap!' },
+          { speaker: 'Zap the Squirrel', text: 'It is up in the tree!', emotion: 'surprised' }
+        ],
+        isInteractive: true,
+        interactiveTarget: {
+          description: "Farah's red cap hanging on the branch",
+          hint: 'Look up in the tree!',
+          position: { x: 45, y: 3, width: 16, height: 17 }
+        }
+      },
+      {
+        id: 4,
+        title: 'Scene 4',
+        image: '/stories/ap/scene4.jpg',
+        dialogue: [
+          { speaker: 'Mitzy the Mole', text: 'Tap, tap, tap!', emotion: 'excited' },
+          { speaker: 'Zap the Squirrel', text: 'I can tap the branch.', emotion: 'thinking' },
+          { speaker: 'narrator', text: 'Zap will tap it down.' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Scene 5',
+        image: '/stories/ap/scene5.jpg',
+        dialogue: [
+          { speaker: 'Zap the Squirrel', text: 'Zap! I got the cap!', emotion: 'happy' },
+          { speaker: 'Mitzy the Mole', text: 'Now it is in your lap!', emotion: 'happy' },
+          { speaker: 'Farah the Fawn', text: 'You found my cap!', emotion: 'happy' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Scene 6',
+        image: '/stories/ap/scene6.jpg',
+        dialogue: [
+          { speaker: 'Farah the Fawn', text: 'Clap, clap, clap!', emotion: 'excited' },
+          { speaker: 'Zap the Squirrel', text: 'Snap! You did it!', emotion: 'happy' },
+          { speaker: 'narrator', text: 'You can read -ap! cap, map, nap, tap, flap, clap, snap, lap, zap!' }
+        ]
+      }
+    ],
+    locationId: 'acorn-store'
   },
 
   {
@@ -792,7 +895,6 @@ export const mysteries: Mystery[] = [
 // array above; these fill the gaps in the sequence.
 export const comingSoonLessons: ComingSoonLesson[] = [
   // 1. Short vowel CVC
-  { id: 'cs-ap', wordFamily: '-ap', title: '-ap family', order: 3, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-in', wordFamily: '-in', title: '-in family', order: 5, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-it', wordFamily: '-it', title: '-it family', order: 6, status: 'coming-soon', group: 'Short Vowel CVC' },
   { id: 'cs-ot', wordFamily: '-ot', title: '-ot family', order: 8, status: 'coming-soon', group: 'Short Vowel CVC' },
