@@ -982,4 +982,4 @@ export const badges: Badge[] = [
   }
 ];
 
-export const heroImage = 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769437274038_769aaef6.jpg';
+export const heroImage = '/cozy-village.webp';
