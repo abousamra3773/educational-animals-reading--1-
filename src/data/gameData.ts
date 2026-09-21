@@ -303,7 +303,7 @@ export const mysteries: Mystery[] = [
     id: 'flapping-cap',
     title: 'The Case of the Flapping Cap',
     tagline: "Help Farah the Fawn find her missing cap!",
-    description: "Farah lost her red cap at the Acorn Store! Zap the Squirrel and Mitzy the Mole use a map to find it. Read along with words that end in -ap.",
+    description: "Farah lost her mama's cap in the woods when she took a nap! Zap the Squirrel and Mitzy the Mole use a map to find it. Read along with words that end in -ap.",
     detective: characters[9],
     wordFamily: '-ap',
     order: 3,
@@ -312,7 +312,7 @@ export const mysteries: Mystery[] = [
     completed: false,
     words: ['cap', 'map', 'nap', 'tap', 'lap', 'zap', 'flap', 'clap', 'snap'],
     story: [
-      { id: 1, text: 'Farah is at the Acorn Store. Her cap is gone!', clue: 'Find words that end in -ap!' },
+      { id: 1, text: "Farah lost her mama's cap in the woods!", clue: 'Find words that end in -ap!' },
       { id: 2, text: 'Zap and Mitzy look at the map.', clue: 'The map can help us!' },
       { id: 3, text: 'Farah had a nap. Her cap went flap!', clue: 'Where did the cap go?' },
       { id: 4, text: 'Tap, tap, tap! Zap taps the branch.', clue: 'Get the cap down!' },
