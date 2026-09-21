@@ -2,7 +2,7 @@
 
 import React, { useCallback, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ZoomIn, ZoomOut, Maximize2 } from 'lucide-react';
+import { ZoomIn, ZoomOut, Maximize2, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MAP_SRC = '/tangle-tail-town-map.jpg';
@@ -19,6 +19,13 @@ interface Hotspot {
 }
 
 const HOTSPOTS: Hotspot[] = [
+  {
+    id: 'sweet-paws',
+    name: 'Sweet Paws Sweets & Ice Cream',
+    description: 'The cupcake shop in the heart of town — sweets, treats, and ice cream.',
+    x: 42,
+    y: 43,
+  },
   {
     id: 'teapot-house',
     name: 'Teapot House',
@@ -82,6 +89,35 @@ const HOTSPOTS: Hotspot[] = [
 const MIN_SCALE = 1;
 const MAX_SCALE = 3;
 const SCALE_STEP = 0.5;
+
+interface Signpost {
+  id: string;
+  label: string;
+  x: number;
+  y: number;
+  /** which arrow direction to show */
+  arrow: 'up-right' | 'right';
+  /** show a red locator dot before the label */
+  dot?: boolean;
+}
+
+const SIGNS: Signpost[] = [
+  {
+    id: 'woods',
+    label: 'Tangle Town Woods this way',
+    x: 52,
+    y: 30,
+    arrow: 'up-right',
+    dot: true,
+  },
+  {
+    id: 'park',
+    label: 'To the Tangle Tail Park',
+    x: 64,
+    y: 39,
+    arrow: 'right',
+  },
+];
 
 export const TangleTailTownMap: React.FC = () => {
   const [scale, setScale] = useState(1);
@@ -273,6 +309,32 @@ export const TangleTailTownMap: React.FC = () => {
                   </div>
                 );
               })}
+
+              {/* Directional signposts */}
+              {SIGNS.map((sign) => (
+                <div
+                  key={sign.id}
+                  className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                  style={{ left: `${sign.x}%`, top: `${sign.y}%` }}
+                >
+                  <div className="flex items-center gap-1.5 rounded-md border border-amber-800/40 bg-amber-50/95 px-2 py-1 shadow-md">
+                    {sign.dot && (
+                      <span className="relative flex h-2.5 w-2.5 shrink-0">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/60" />
+                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-600 ring-2 ring-white" />
+                      </span>
+                    )}
+                    <span className="whitespace-nowrap font-serif text-[10px] font-bold leading-none text-amber-900 sm:text-xs">
+                      {sign.label}
+                    </span>
+                    {sign.arrow === 'up-right' ? (
+                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-amber-900" />
+                    ) : (
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-amber-900" />
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
