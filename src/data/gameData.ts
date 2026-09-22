@@ -93,14 +93,34 @@ export const characters: Character[] = [
     color: 'bg-sky-100'
   },
   {
-    id: 'zap',
-    name: 'Zap the Squirrel',
-    animal: 'Squirrel',
-    specialty: 'Snapping words together',
-    personality: 'Speedy and kind, Zap runs the Acorn Store and loves to help friends read!',
-    image: '/characters/zap_squirrel_detective.png',
-    fullBodyImage: '/characters/zap_squirrel_detective.png',
-    color: 'bg-green-100'
+    id: 'mitsy',
+    name: 'Mitsy the Mole',
+    animal: 'Mole',
+    specialty: 'Digging up hidden clues',
+    personality: 'Curious and cozy, Mitsy burrows deep to uncover clues others miss!',
+    image: '/characters/mitsy_mole_detective.jpg',
+    fullBodyImage: '/characters/mitsy_mole_detective.jpg',
+    color: 'bg-slate-100'
+  },
+  {
+    id: 'ducky',
+    name: 'Ducky the Duck',
+    animal: 'Duck',
+    specialty: 'Following the trail',
+    personality: 'Cheerful and brave, Ducky waddles after every clue with a happy quack!',
+    image: '/characters/ducky_duck_detective.jpg',
+    fullBodyImage: '/characters/ducky_duck_detective.jpg',
+    color: 'bg-yellow-100'
+  },
+  {
+    id: 'rocky',
+    name: 'Rocky Racoon',
+    animal: 'Raccoon',
+    specialty: 'Spotting tiny details',
+    personality: 'Clever and quick-pawed, Rocky sniffs out clues hidden in plain sight!',
+    image: '/characters/rocky_raccoon_detective.jpg',
+    fullBodyImage: '/characters/rocky_raccoon_detective.jpg',
+    color: 'bg-emerald-100'
   }
 ];
 
