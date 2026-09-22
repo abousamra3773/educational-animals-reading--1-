@@ -13,7 +13,6 @@ import { ProgressDashboard } from './ProgressDashboard';
 import { ReadingInterface } from './ReadingInterface';
 import { ParentSection } from './ParentSection';
 import { ParentDashboard } from './ParentDashboard';
-import { TeacherDashboard } from './TeacherDashboard';
 import { Footer } from './Footer';
 import { AuthModal } from './AuthModal';
 import { TownMap } from './TownMap';
@@ -99,6 +98,14 @@ const AppContent: React.FC = () => {
       loadFromCloud();
     }
   }, [isAuthenticated, authLoading, loadFromCloud]);
+
+  // The standalone Teachers page was merged into the combined Parents & Teachers
+  // corner. Redirect any lingering navigation to the Teachers view over to it.
+  useEffect(() => {
+    if (currentView === 'teachers') {
+      setCurrentView('parents');
+    }
+  }, [currentView]);
 
   const scrollToMysteries = () => {
     setCurrentView('mysteries');
@@ -610,18 +617,11 @@ const AppContent: React.FC = () => {
         </section>
       )}
 
-      {/* Parents View */}
+      {/* Parents & Teachers View */}
       {currentView === 'parents' && (
         <ParentSection 
           onOpenAuth={() => setShowAuthModal(true)} 
           onOpenDashboard={() => setShowParentDashboard(true)}
-        />
-      )}
-
-      {/* Teachers View */}
-      {currentView === 'teachers' && (
-        <TeacherDashboard 
-          onOpenAuth={() => setShowAuthModal(true)} 
         />
       )}
 
@@ -634,7 +634,10 @@ const AppContent: React.FC = () => {
           setCurrentView('my-detective');
         } else if (view === 'my-hq') {
           setCurrentView('my-hq');
-        } else if (view === 'mysteries' || view === 'characters' || view === 'progress' || view === 'parents' || view === 'home' || view === 'teachers') {
+        } else if (view === 'teachers') {
+          // The Teachers page was merged into Parents & Teachers.
+          setCurrentView('parents');
+        } else if (view === 'mysteries' || view === 'characters' || view === 'progress' || view === 'parents' || view === 'home') {
           setCurrentView(view as View);
         }
       }} />

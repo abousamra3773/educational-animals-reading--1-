@@ -148,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleClick('teachers')}
+                  onClick={() => handleClick('parents')}
                   className="text-gray-600 hover:text-purple-600 cursor-pointer transition-colors text-left"
                 >
                   Classroom Setup
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => handleClick('teachers')}
+                  onClick={() => handleClick('parents')}
                   className="text-gray-600 hover:text-purple-600 cursor-pointer transition-colors text-left"
                 >
                   Student Roster
@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => handleClick('teachers')}
+                  onClick={() => handleClick('parents')}
                   className="text-gray-600 hover:text-purple-600 cursor-pointer transition-colors text-left"
                 >
                   Class Analytics
@@ -172,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => handleClick('teachers')}
+                  onClick={() => handleClick('parents')}
                   className="text-gray-600 hover:text-purple-600 cursor-pointer transition-colors text-left"
                 >
                   Progress Reports
