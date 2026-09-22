@@ -5,7 +5,18 @@ import { Link } from 'react-router-dom';
 import { ZoomIn, ZoomOut, Maximize2, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const MAP_SRC = '/tangle-tail-town-map.jpg';
+type MapLevel = 1 | 2;
+
+const MAPS: Record<MapLevel, { src: string; alt: string }> = {
+  1: {
+    src: '/tangle-tail-town-map.jpg',
+    alt: 'Illustrated map of Tangle Tail Town, Level 1.',
+  },
+  2: {
+    src: '/maps/tangle-tail-town-level-2.jpg',
+    alt: 'Illustrated map of Tangle Tail Town, Level 2.',
+  },
+};
 
 interface Hotspot {
   id: string;
@@ -24,65 +35,103 @@ const HOTSPOTS: Hotspot[] = [
     name: 'Sweet Paws Treats and Ice Cream',
     description: 'The cupcake shop in the heart of town — sweets, treats, and ice cream.',
     x: 42,
-    y: 43,
+    y: 38,
   },
   {
     id: 'teapot-house',
     name: 'Teapot House',
     description: 'A cozy little home shaped like a giant painted teapot.',
-    x: 15,
-    y: 44,
+    x: 16,
+    y: 27,
   },
   {
     id: 'mushroom-hollow',
     name: 'Mushroom Hollow Homes',
     description: 'Toadstool cottages where the smallest woodland folk live.',
-    x: 38,
-    y: 94,
+    x: 42,
+    y: 80,
   },
   {
     id: 'gazelles-garden',
     name: "Gazelle's Garden",
     description: 'Neat rows of veggies and flowers tended by Gazelle.',
-    x: 17,
-    y: 89,
+    x: 24,
+    y: 63,
   },
   {
     id: 'jakes-bakery',
     name: "Jake's Bakery",
     description: 'Only bakery in Tangle Town — owned by Jake the Snake.',
-    x: 62,
-    y: 81,
+    x: 54,
+    y: 72,
     href: '/stories/ake-missing-recipe',
   },
   {
     id: 'boat-house',
     name: 'Boat House',
     description: 'A snug little houseboat bobbing on the duck pond.',
-    x: 81,
-    y: 95,
+    x: 86,
+    y: 76,
   },
   {
     id: 'wise-owl-library',
     name: 'Wise Owl Library',
     description: 'Shelves of books tucked inside the great old oak tree.',
-    x: 75,
-    y: 52,
+    x: 82,
+    y: 46,
   },
   {
     id: 'willas-nest',
     name: "Willa's Nest",
     description: "Willa the bird's twiggy home high in the treetops.",
-    x: 89,
-    y: 17,
+    x: 80,
+    y: 11,
   },
   {
     id: 'acorn-store',
     name: 'Acorn Store',
     description: "Zap the Squirrel's shop — acorns, maps, and snacks.",
-    x: 92,
-    y: 43,
+    x: 91,
+    y: 30,
     href: '/stories/ap-flapping-cap',
+  },
+];
+
+const LEVEL2_HOTSPOTS: Hotspot[] = [
+  {
+    id: 'tangle-town-woods',
+    name: 'Tangle Town Woods',
+    description: 'A peaceful forest path winding through the tall autumn trees.',
+    x: 20,
+    y: 29,
+  },
+  {
+    id: 'treehouse-lane',
+    name: 'Treehouse Lane',
+    description: 'Rope bridges and cozy treehouses high up in the old oaks.',
+    x: 71,
+    y: 33,
+  },
+  {
+    id: 'cozy-cottage-lane',
+    name: 'Cozy Cottage Lane',
+    description: 'A winding row of colorful cottages where friends live.',
+    x: 35,
+    y: 58,
+  },
+  {
+    id: 'bell-tower-square',
+    name: 'Bell Tower Square',
+    description: 'The town center gathered around the famous clock and bell tower.',
+    x: 51,
+    y: 58,
+  },
+  {
+    id: 'tangle-tail-park',
+    name: 'Tangle Tail Park',
+    description: 'A sunny playground with swings and a slide for everyone.',
+    x: 70,
+    y: 56,
   },
 ];
 
@@ -123,6 +172,17 @@ export const TangleTailTownMap: React.FC = () => {
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [level, setLevel] = useState<MapLevel>(1);
+
+  const hotspots = level === 1 ? HOTSPOTS : LEVEL2_HOTSPOTS;
+
+  const switchLevel = (next: MapLevel) => {
+    if (next === level) return;
+    setLevel(next);
+    setScale(1);
+    setOffset({ x: 0, y: 0 });
+    setActiveId(null);
+  };
 
   const dragState = useRef<{
     dragging: boolean;
@@ -189,6 +249,29 @@ export const TangleTailTownMap: React.FC = () => {
 
   return (
     <div className="mx-auto w-full max-w-5xl">
+      {/* Level toggle */}
+      <div
+        role="group"
+        aria-label="Choose map level"
+        className="mb-3 flex items-center justify-center gap-2"
+      >
+        {([1, 2] as const).map((l) => (
+          <button
+            key={l}
+            type="button"
+            aria-pressed={level === l}
+            onClick={() => switchLevel(l)}
+            className={`rounded-full px-5 py-1.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300 ${
+              level === l
+                ? 'bg-purple-500 text-white shadow'
+                : 'border border-amber-300/80 bg-white text-gray-600 hover:bg-amber-50'
+            }`}
+          >
+            Level {l}
+          </button>
+        ))}
+      </div>
+
       {/* Parchment / watercolor frame */}
       <div className="relative rounded-3xl border-4 border-amber-200/80 bg-gradient-to-br from-amber-50 to-orange-50 p-2 shadow-2xl shadow-amber-900/20 sm:p-3">
         <div className="rounded-2xl border border-amber-300/60 p-1">
@@ -248,14 +331,14 @@ export const TangleTailTownMap: React.FC = () => {
               }}
             >
               <img
-                src={MAP_SRC}
-                alt="Illustrated watercolor map of Tangle Tail Town showing its cozy homes and shops"
+                src={MAPS[level].src}
+                alt={MAPS[level].alt}
                 className="block w-full"
                 draggable={false}
               />
 
               {/* Hotspots */}
-              {HOTSPOTS.map((spot) => {
+              {hotspots.map((spot) => {
                 const isActive = activeId === spot.id;
                 const showAbove = spot.y > 55;
                 return (
@@ -310,8 +393,8 @@ export const TangleTailTownMap: React.FC = () => {
                 );
               })}
 
-              {/* Directional signposts — red dot with hover tooltip */}
-              {SIGNS.map((sign) => {
+              {/* Directional signposts — red dot with hover tooltip (Level 1 only) */}
+              {level === 1 && SIGNS.map((sign) => {
                 const isActive = activeId === sign.id;
                 const showAbove = sign.y > 55;
                 return (
