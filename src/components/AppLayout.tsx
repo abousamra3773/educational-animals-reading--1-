@@ -5,6 +5,7 @@ import { LanguageProvider, useLanguage } from '../context/LanguageContext';
 import { useTranslatedMysteries } from '../hooks/useTranslatedMystery';
 import { Navigation } from './Navigation';
 import { HeroSection } from './HeroSection';
+import { BetaNotice } from './BetaNotice';
 import { MysteryCard } from './MysteryCard';
 import { ComingSoonCard } from './ComingSoonCard';
 import { CharacterCard } from './CharacterCard';
@@ -171,6 +172,7 @@ const AppContent: React.FC = () => {
       {/* Home View */}
       {currentView === 'home' && (
         <>
+          <BetaNotice />
           <HeroSection onStartPlaying={scrollToMysteries} />
           
           {/* Welcome to Tangle Tail Town Banner */}
