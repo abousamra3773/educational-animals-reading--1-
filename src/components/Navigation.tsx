@@ -105,9 +105,11 @@ export const Navigation: React.FC<NavigationProps> = ({ currentView, onViewChang
             onClick={() => onViewChange('home')}
             className="flex items-center gap-2 group flex-shrink-0"
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <PawPrintIcon className="text-white" size={20} />
-            </div>
+            <img
+              src="/logo.jpg"
+              alt="Word and Whisker logo"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-transform"
+            />
             <span className="hidden sm:block text-lg md:text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent whitespace-nowrap">
               Word and Whisker
             </span>
