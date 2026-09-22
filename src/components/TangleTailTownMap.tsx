@@ -267,7 +267,7 @@ export const TangleTailTownMap: React.FC = () => {
                 : 'border border-amber-300/80 bg-white text-gray-600 hover:bg-amber-50'
             }`}
           >
-            Level {l}
+            Map {l}
           </button>
         ))}
       </div>
