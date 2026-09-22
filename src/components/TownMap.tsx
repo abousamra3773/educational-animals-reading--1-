@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TownLocation, Mystery } from '../types';
-import { townLocations, townMapImage } from '../data/townData';
+import { townLocations } from '../data/townData';
+import { TangleTailTownMap } from './TangleTailTownMap';
 import { useGame } from '../context/GameContext';
 import { 
   XIcon, 
@@ -55,11 +56,17 @@ const LocationCard: React.FC<LocationCardProps> = ({
         className="relative cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <img 
-          src={location.image} 
-          alt={location.name}
-          className="w-full h-32 object-cover"
-        />
+        {location.image ? (
+          <img 
+            src={location.image} 
+            alt={location.name}
+            className="w-full h-32 object-cover"
+          />
+        ) : (
+          <div className="w-full h-32 flex items-center justify-center bg-gradient-to-br from-purple-200 to-pink-200 text-purple-700">
+            <MapPinIcon size={40} />
+          </div>
+        )}
         
         {/* Completed Badge */}
         {isCompleted && (
@@ -84,6 +91,10 @@ const LocationCard: React.FC<LocationCardProps> = ({
       {/* Expanded Mysteries List */}
       {isExpanded && (
         <div className="px-4 pb-4 border-t border-gray-100">
+          {locationMysteries.length === 0 ? (
+            <p className="text-sm text-gray-500 py-3">More adventures coming soon!</p>
+          ) : (
+          <>
           <p className="text-sm text-gray-500 py-3">Mysteries at this location:</p>
           <div className="space-y-2">
             {locationMysteries.map((mystery) => {
@@ -125,6 +136,8 @@ const LocationCard: React.FC<LocationCardProps> = ({
               );
             })}
           </div>
+          </>
+          )}
         </div>
       )}
     </div>
@@ -216,51 +229,7 @@ export const TownMap: React.FC<TownMapProps> = ({ isOpen, onClose, onSelectMyste
               ))}
             </div>
           ) : (
-            <div className="relative">
-              <img 
-                src={townMapImage} 
-                alt="Tangle Tail Town Map"
-                className="w-full rounded-2xl shadow-lg"
-              />
-              
-              {/* Location Markers */}
-              {townLocations.map((location) => {
-                const locationMysteries = mysteries.filter(m => 
-                  location.mysteryIds.includes(m.id)
-                );
-                const completedCount = locationMysteries.filter(m => 
-                  progress.completedMysteries.includes(m.id)
-                ).length;
-                const isCompleted = completedCount === locationMysteries.length;
-
-                return (
-                  <button
-                    key={location.id}
-                    className={`
-                      absolute transform -translate-x-1/2 -translate-y-1/2
-                      p-2 rounded-full shadow-lg transition-all hover:scale-110
-                      ${isCompleted 
-                        ? 'bg-green-500 text-white' 
-                        : completedCount > 0
-                          ? 'bg-amber-500 text-white'
-                          : 'bg-purple-500 text-white'
-                      }
-                    `}
-                    style={{ 
-                      left: `${location.position.x}%`, 
-                      top: `${location.position.y}%` 
-                    }}
-                    title={location.name}
-                  >
-                    {isCompleted ? (
-                      <CheckCircleIcon size={24} />
-                    ) : (
-                      <MapPinIcon size={24} />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+            <TangleTailTownMap />
           )}
         </div>
 

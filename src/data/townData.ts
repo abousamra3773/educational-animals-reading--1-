@@ -3,8 +3,8 @@ import { TownLocation, ShopItem } from '../types';
 export const townLocations: TownLocation[] = [
   {
     id: 'bakery',
-    name: 'Sweet Paws Bakery',
-    description: 'A cozy bakery where delicious treats are made!',
+    name: "Jake's Bakery",
+    description: 'The only bakery in Tangle Town — owned by Jake the Snake!',
     image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769466744080_819937d7.jpg',
     position: { x: 20, y: 30 },
     mysteryIds: ['missing-cake', 'hop-shop'],
@@ -12,12 +12,72 @@ export const townLocations: TownLocation[] = [
     completed: false
   },
   {
+    id: 'sweet-paws',
+    name: 'Sweet Paws Treats and Ice Cream',
+    description: 'The cupcake shop in the heart of town — sweets, treats, and ice cream!',
+    image: '',
+    position: { x: 42, y: 43 },
+    mysteryIds: [],
+    visited: false,
+    completed: false
+  },
+  {
     id: 'garden',
-    name: 'Sunny Meadow Garden',
+    name: "Gazelle's Garden",
     description: 'A beautiful garden full of flowers and vegetables!',
     image: 'https://d64gsuwffb70l.cloudfront.net/697777a0c70121e08d0a73b2_1769466765809_8dc3643f.png',
     position: { x: 70, y: 25 },
     mysteryIds: ['garden-mystery'],
+    visited: false,
+    completed: false
+  },
+  {
+    id: 'mushroom-hollow',
+    name: 'Mushroom Hollow Homes',
+    description: 'A cluster of toadstool cottages where the little critters live.',
+    image: '',
+    position: { x: 38, y: 82 },
+    mysteryIds: [],
+    visited: false,
+    completed: false
+  },
+  {
+    id: 'teapot-house',
+    name: 'Teapot House',
+    description: 'A cozy little home shaped like a giant painted teapot.',
+    image: '',
+    position: { x: 15, y: 44 },
+    mysteryIds: [],
+    visited: false,
+    completed: false
+  },
+  {
+    id: 'boat-house',
+    name: 'Boat House',
+    description: 'A wooden boat home floating by the pond, home to the ducks.',
+    image: '',
+    position: { x: 84, y: 84 },
+    mysteryIds: [],
+    visited: false,
+    completed: false
+  },
+  {
+    id: 'acorn-store',
+    name: 'Acorn Store',
+    description: "Zap the Squirrel's shop — acorns, maps, and snacks.",
+    image: '',
+    position: { x: 90, y: 45 },
+    mysteryIds: ['flapping-cap'],
+    visited: false,
+    completed: false
+  },
+  {
+    id: 'willas-nest',
+    name: "Willa's Nest",
+    description: 'A snug bird nest high in the great oak tree.',
+    image: '',
+    position: { x: 87, y: 16 },
+    mysteryIds: [],
     visited: false,
     completed: false
   },
