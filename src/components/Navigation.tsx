@@ -90,8 +90,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentView, onViewChang
     { id: 'my-detective' as View, label: 'My Detective', icon: StarIcon },
     { id: 'my-hq' as View, label: 'Treehouse', icon: TreehouseIcon },
     { id: 'progress' as View, label: 'Progress', icon: ChartIcon },
-    { id: 'parents' as View, label: 'Parents', icon: UsersIcon },
-    { id: 'teachers' as View, label: 'Teachers', icon: GraduationCapIcon },
+    { id: 'parents' as View, label: 'Parents & Teachers', icon: UsersIcon },
   ];
 
   const isParent = user?.role === 'parent';
@@ -134,7 +133,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentView, onViewChang
                   `}
                 >
                   <Icon size={18} />
-                  <span>{item.label}</span>
+                  <span className="whitespace-nowrap">{item.label}</span>
                   {item.id === 'progress' && progress.totalStars > 0 && (
                     <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">
                       {progress.totalStars}
@@ -258,7 +257,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentView, onViewChang
                           </button>
                         )}
                         <button
-                          onClick={() => { onViewChange('teachers'); setShowUserMenu(false); }}
+                          onClick={() => { onViewChange('parents'); setShowUserMenu(false); }}
                           className="w-full px-4 py-2 text-left text-gray-700 hover:bg-purple-50 transition-colors flex items-center gap-2"
                         >
                           <GraduationCapIcon size={18} />
