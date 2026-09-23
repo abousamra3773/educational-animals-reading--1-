@@ -102,16 +102,18 @@ export interface Avatar {
   accessories: string[];
 }
 
-export interface TownLocation {
+  export interface TownLocation {
   id: string;
   name: string;
   description: string;
   image: string;
+  imageAlt?: string;
+  level?: 1 | 2;
   position: { x: number; y: number };
   mysteryIds: string[];
   visited: boolean;
   completed: boolean;
-}
+  }
 
 export interface ShopItem {
   id: string;

@@ -31,6 +31,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   onSelectMystery 
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imgError, setImgError] = useState(false);
   
   const locationMysteries = mysteries.filter(m => 
     location.mysteryIds.includes(m.id)
@@ -53,34 +54,38 @@ const LocationCard: React.FC<LocationCardProps> = ({
     >
       {/* Location Image & Info */}
       <div 
-        className="relative cursor-pointer"
+        className="cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        {location.image ? (
-          <img 
-            src={location.image} 
-            alt={location.name}
-            className="w-full h-32 object-cover"
-          />
-        ) : (
-          <div className="w-full h-32 flex items-center justify-center bg-gradient-to-br from-purple-200 to-pink-200 text-purple-700">
-            <MapPinIcon size={40} />
-          </div>
-        )}
-        
-        {/* Completed Badge */}
-        {isCompleted && (
-          <div className="absolute top-2 right-2 bg-green-500 text-white p-2 rounded-full">
-            <CheckCircleIcon size={20} />
-          </div>
-        )}
-        
-        {/* Progress Badge */}
-        {!isCompleted && hasVisited && (
-          <div className="absolute top-2 right-2 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-            {completedCount}/{locationMysteries.length}
-          </div>
-        )}
+        <div className="relative aspect-[3/2] w-full overflow-hidden bg-gradient-to-br from-purple-200 to-pink-200">
+          {location.image && !imgError ? (
+            <img 
+              src={location.image} 
+              alt={location.imageAlt || location.name}
+              loading="lazy"
+              onError={() => setImgError(true)}
+              className="h-full w-full object-cover object-center"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-purple-700">
+              <MapPinIcon size={40} />
+            </div>
+          )}
+
+          {/* Completed Badge */}
+          {isCompleted && (
+            <div className="absolute top-2 right-2 bg-green-500 text-white p-2 rounded-full shadow">
+              <CheckCircleIcon size={20} />
+            </div>
+          )}
+
+          {/* Progress Badge */}
+          {!isCompleted && hasVisited && (
+            <div className="absolute top-2 right-2 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow">
+              {completedCount}/{locationMysteries.length}
+            </div>
+          )}
+        </div>
 
         <div className="p-4">
           <h3 className="font-bold text-gray-800 text-lg">{location.name}</h3>
@@ -214,19 +219,32 @@ export const TownMap: React.FC<TownMapProps> = ({ isOpen, onClose, onSelectMyste
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[50vh]">
           {viewMode === 'list' ? (
-            <div className="grid sm:grid-cols-2 gap-4">
-              {townLocations.map((location) => (
-                <LocationCard
-                  key={location.id}
-                  location={location}
-                  mysteries={mysteries}
-                  completedMysteries={progress.completedMysteries}
-                  onSelectMystery={(mystery) => {
-                    onSelectMystery(mystery);
-                    onClose();
-                  }}
-                />
-              ))}
+            <div className="space-y-6">
+              {([1, 2] as const).map((lvl) => {
+                const cards = townLocations.filter((l) => (l.level ?? 1) === lvl);
+                if (cards.length === 0) return null;
+                return (
+                  <section key={lvl}>
+                    <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-purple-600">
+                      Level {lvl}
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {cards.map((location) => (
+                        <LocationCard
+                          key={location.id}
+                          location={location}
+                          mysteries={mysteries}
+                          completedMysteries={progress.completedMysteries}
+                          onSelectMystery={(mystery) => {
+                            onSelectMystery(mystery);
+                            onClose();
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           ) : (
             <TangleTailTownMap />
