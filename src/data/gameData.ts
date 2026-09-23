@@ -434,7 +434,7 @@ export const mysteries: Mystery[] = [
       {
         id: 1,
         title: 'Scene 1',
-        image: '/stories/at/scene1.jpg',
+        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image_20260922_203046-O3FM5tM4Cl0ZOs9ewwCgdhDOKWKOWb.jpg',
         dialogue: [
           { speaker: 'narrator', text: 'It was a sunny day at Cozy Cottage Lane.' },
           { speaker: 'Bella Bunny', text: 'What a nice day! I love to sit on my mat with my friend Matt the Cat.', emotion: 'happy' },
