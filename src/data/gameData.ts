@@ -449,7 +449,7 @@ export const mysteries: Mystery[] = [
           { speaker: 'narrator', text: 'Suddenly, a gust of wind blew through the garden!' },
           { speaker: 'Batty the Bat', text: 'Wheee! Look at this pretty hat! I will take it!', emotion: 'excited' },
           { speaker: 'Bella Bunny', text: 'Oh no! That bat took my hat!', emotion: 'worried' },
-          { speaker: 'detective', text: 'We need to get it back!', emotion: 'excited' }
+          { speaker: 'Matt the Cat', text: 'We need to get it back!', emotion: 'excited' }
         ]
       },
       {
@@ -459,7 +459,7 @@ export const mysteries: Mystery[] = [
         dialogue: [
           { speaker: 'Matt the Cat', text: 'I will run after that bat! Wait for me!', emotion: 'excited' },
           { speaker: 'narrator', text: 'Matt the Cat ran as fast as he could through the meadow.' },
-          { speaker: 'detective', text: 'Go, Matt! You can catch that bat!', emotion: 'excited' }
+          { speaker: 'Bella Bunny', text: 'Go, Matt! You can catch that bat!', emotion: 'excited' }
         ]
       },
       {
@@ -469,8 +469,8 @@ export const mysteries: Mystery[] = [
         headerText: 'Can you find the hat? Click on it to help Bella!',
         dialogue: [
           { speaker: 'Matt the Cat', text: 'Look! The hat is on that flat rock!', emotion: 'happy' },
-          { speaker: 'detective', text: 'I see it! The hat sat on the flat rock by the stream.', emotion: 'happy' },
-          { speaker: 'narrator', text: 'The detective picks up the hat carefully.' }
+          { speaker: 'Bella Bunny', text: 'I see it! The hat sat on the flat rock by the stream.', emotion: 'happy' },
+          { speaker: 'narrator', text: 'Bella the Bunny picks up the hat carefully.' }
         ],
         isInteractive: true,
         interactiveTarget: {
@@ -484,7 +484,7 @@ export const mysteries: Mystery[] = [
         title: 'Scene 5',
         image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/at-story-scene05-S7Xv3fD75JPi4kn5g7vZYzlCCTg7yC.jpg',
         dialogue: [
-          { speaker: 'Bella Bunny', text: 'My hat! You found it! Thank you so much!', emotion: 'happy' },
+          { speaker: 'Bella Bunny', text: "My hat! I'm glad we found it!", emotion: 'happy' },
           { speaker: 'Batty the Bat', text: 'I am sorry I took your hat. I just wanted to play!', emotion: 'sad' },
           { speaker: 'Bella Bunny', text: 'That is okay, Batty! Do you want to sit and chat with us?', emotion: 'happy' },
           { speaker: 'Matt the Cat', text: 'Yes! Let us all be friends!', emotion: 'happy' }
@@ -496,7 +496,7 @@ export const mysteries: Mystery[] = [
         image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/at-story-scene06-XLVXHPhEinWt5RAf76zgVkCtxP8jPg.jpg',
         dialogue: [
           { speaker: 'narrator', text: 'Everyone sat together on the mat and had a wonderful time.' },
-          { speaker: 'Bella Bunny', text: 'Great job, Detective! You helped us find my hat!', emotion: 'happy' },
+          { speaker: 'Bella Bunny', text: "Glad we are all friends! Let's go sit on the mat and chat!", emotion: 'happy' },
           { speaker: 'narrator', text: 'Time to practice your -AT words!' }
         ]
       }
