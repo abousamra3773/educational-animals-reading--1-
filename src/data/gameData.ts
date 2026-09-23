@@ -434,7 +434,7 @@ export const mysteries: Mystery[] = [
       {
         id: 1,
         title: 'Scene 1',
-        image: '/stories/at/scene1.jpg',
+        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image_20260922_203046-O3FM5tM4Cl0ZOs9ewwCgdhDOKWKOWb.jpg',
         dialogue: [
           { speaker: 'narrator', text: 'It was a sunny day at Cozy Cottage Lane.' },
           { speaker: 'Bella Bunny', text: 'What a nice day! I love to sit on my mat with my friend Matt the Cat.', emotion: 'happy' },
@@ -482,7 +482,7 @@ export const mysteries: Mystery[] = [
       {
         id: 5,
         title: 'Scene 5',
-        image: '/stories/at/scene5.png',
+        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/at-story-scene05-S7Xv3fD75JPi4kn5g7vZYzlCCTg7yC.jpg',
         dialogue: [
           { speaker: 'Bella Bunny', text: 'My hat! You found it! Thank you so much!', emotion: 'happy' },
           { speaker: 'Batty the Bat', text: 'I am sorry I took your hat. I just wanted to play!', emotion: 'sad' },
@@ -493,7 +493,7 @@ export const mysteries: Mystery[] = [
       {
         id: 6,
         title: 'Scene 6',
-        image: '/stories/at/scene6.png',
+        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/at-story-scene06-XLVXHPhEinWt5RAf76zgVkCtxP8jPg.jpg',
         dialogue: [
           { speaker: 'narrator', text: 'Everyone sat together on the mat and had a wonderful time.' },
           { speaker: 'Bella Bunny', text: 'Great job, Detective! You helped us find my hat!', emotion: 'happy' },
